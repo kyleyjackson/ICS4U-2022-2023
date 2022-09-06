@@ -1,0 +1,28 @@
+#hello3{
+    color:green;
+}
+body{ 
+    background-color:#a18585; /*Hexadecimal colour code for background*/
+    color: rgb(100, 100, 255); /*RGB values for text colour*/
+}
+#p1{
+    font-family: Arial, Helvetica, sans-serif; /*font change*/
+}
+#p2 {
+    font-size: 32px; /*font size change*/
+}
+#p3 {
+    line-height: 60px;
+}
+.box1{
+    background-color: aquamarine;
+    font-family:'Courier New', Courier, monospace;
+    color:blueviolet;
+    width:500px; /*changes width of text*/
+    margin:auto; /*centers text*/
+}
+.box2{
+    width:300px;
+    margin:20px, 20px, 30px, 50px; 
+    color: black;
+}

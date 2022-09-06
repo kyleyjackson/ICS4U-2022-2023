@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS cheat sheet</title>
+    <!-- References the style.css file location in the style folder to style hello3 (external) -->
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <style type="text/css">
+        #hello2{
+            color:blue; 
+        }
+    </style> <!-- Internal CSS (suboptimal) -->
+</head>
+<body>
+    <h1 style="color:red">Hello</h1> <!-- Inline CSS (BAD!) -->
+    <br>
+    <h1 id="hello2">Hello2</h1>
+    <br>
+    <h1 id="hello3">Hello3</h1>
+    <p>This text is light blue because of style.css!</p>
+    <p id="p1">Here is different font!</p>
+    <p id="p2">Here is bigger font!</p>
+    <p id="p3">Here is spaced out text! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, nemo libero architecto sint delectus molestiae aut deleniti porro aliquid, ea exercitationem qui, veritatis quia dolor provident neque error rem perferendis eos incidunt tempora expedita dicta nam non? Debitis cum ullam nobis voluptas non, quis reprehenderit eligendi magni placeat tempore repellat.</p>
+    <div class="box1"> <!-- Classes can be repeated, ids shouldn't be -->
+        <h1>This is a whole class</h1>
+        <p>All of the text wrapped in this class will be modified together!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, magni. Non praesentium dolores quo in! Odit est quasi ab dignissimos veniam obcaecati, necessitatibus autem repellat quidem et similique iste voluptate ad eos dolorem! Quo, nemo libero, ipsa in voluptatibus amet nesciunt a voluptatem odit necessitatibus commodi maiores ullam, accusantium placeat.</p>
+    </div>
+    <br>
+    <div class="box2">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi nesciunt quod quas architecto asperiores nisi, at officiis libero eum, facilis eos eaque quo sint ipsam dolores, repellat deserunt laboriosam placeat. Alias natus iure quis nesciunt quas nisi vitae, dolorem explicabo numquam nulla inventore. Magnam ipsum perferendis repudiandae praesentium fugit quibusdam! Deleniti quibusdam adipisci ea placeat, doloremque aliquam quam omnis ex ab nihil pariatur tempora et dicta ipsam, quae corrupti ut? Expedita iusto, dignissimos blanditiis consectetur alias quam consequuntur, praesentium dolore quibusdam nihil repudiandae non quos! Distinctio, culpa saepe impedit minus perferendis sequi labore! Consequuntur ex corrupti, ratione possimus quisquam incidunt?</p>
+    </div>
+</body>
+</html>
