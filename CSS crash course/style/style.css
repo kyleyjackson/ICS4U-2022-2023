@@ -26,3 +26,75 @@ body{
     margin:20px, 20px, 30px, 50px; 
     color: black;
 }
+.box3{
+    border-right: 10px red solid; /*border around text box*/
+    border-left: 10px red solid;
+    border-bottom: 20px red solid;
+    border-top: 20px red solid;
+}
+.box4{
+    border-width: 5px red solid;
+    border-top-style: dotted; /* style of the border (or the certain portion of border)*/
+    border-bottom-style: groove;
+
+    padding-top: 20px; /*space between borders*/
+    padding-bottom: 30px;
+    letter-spacing: 5px; /*space between letters*/
+}
+.box5 p{ /*only targeting the paragraph within box5*/
+    border-top: 5px black solid; 
+    border-bottom: 5px black solid;
+    border-left: 5px green solid;
+    border-left: 5px coral solid;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color:rgb(255, 145, 0) 
+}
+a:active {
+    color:rgb(3, 3, 3)
+}
+.links{
+    border: 1px rgb(100, 100, 225) solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+.links h3{
+    text-align:center;
+}
+.links ul{
+    padding: 0;
+    list-style:square;
+}
+.links li{
+    padding-bottom: 6px;
+    border-bottom: dotted 1px #333;
+}
+.form{
+    padding:20px;
+}
+.form .formGroup{
+    padding-bottom:15px;
+}
+.form label{
+    display:block;
+}
+.form input{
+    padding:8px;
+    width:100%;
+}
+.form input[type="text"], .form textarea {
+    padding:8px;
+    width:100%;
+}
+.button{
+    background-color:#333;
+    color:#fff;
+}
+.button:hover{
+    background:red;
+    color:#fff;
+}
