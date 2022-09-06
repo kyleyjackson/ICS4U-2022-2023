@@ -4,17 +4,156 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ICS4U</title>
 </head>
 <body>
-    <h1>this is a header</h1>
-    <h2>this is the 2nd level</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, obcaecati sit. Eveniet magni facilis libero voluptates maiores voluptatem non rerum nesciunt assumenda quaerat est impedit nulla delectus qui, ratione dolor debitis quos placeat perspiciatis. Animi labore corporis temporibus repellendus libero saepe earum, minus ullam iste quaerat dolorem aperiam sapiente consectetur!</p>
-    <h2>this is still 2nd level</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, placeat error dignissimos ullam voluptatum repellat exercitationem dolores optio similique recusandae quam accusamus natus, officiis aperiam velit rerum molestias officia! Dignissimos vel perferendis quas aut dicta ut impedit. Maxime recusandae ducimus laboriosam tempore, veniam asperiores esse necessitatibus quo amet magni at!</p>
 
-    <spam>Lorem ipsum dolor sit amet.</spam>
-    <spam>Click <a href="https://mlb.com">here</a></spam>
+    <!-- Headers  -->
+    <h1>Heading 1</h1> <!-- Largest (most important) -->
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6> <!-- Smallest (least important )-->
 
+    <!-- Parahraphs-->
+    <!-- Adds a space after like println -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis corporis culpa tempore in libero provident ab autem, sunt architecto dolorum doloribus aliquam amet repudiandae, fugiat dolore veritatis. Fuga ad, pariatur inventore iusto ab iste quo vitae alias animi porro placeat repudiandae veritatis quidem accusamus quos officiis, vel laudantium nemo.</p>
+    <!-- Instead of println this acts like print -->
+    <spam>This is one line of text,</spam>
+    <spam>made with two lines of code!</spam>
+
+    <!-- Tag Attributes -->
+    <p>Click <a href="https://mlb.com">here</a></p> <!-- href opens up link on same page -->
+    <p>Also click <a href="http://typings.gg" target="_blank">here!</a></p> <!-- targeting _blank makes the link open on a new tab -->
+
+    <!-- Lists -->
+    <ul> <!-- Bullet point list -->
+        <li>This</li>
+        <li>is</li>
+        <li>a</li>
+        <li>list!</li>
+    </ul>
+
+    <ol> <!-- Ordered list -->
+        <li>This</li>
+        <li>is</li>
+        <li>a</li>
+        <li>numbered</li>
+        <li>list!</li>
+    </ol>
+
+    <!-- Tables -->
+    <table>
+        <thead> <!-- Table heading -->
+            <tr> <!-- Table row -->
+                <th>Name</th> <!-- Headings in the table-->
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody> <!-- Table body -->
+            <tr>
+                <td>Kyle J</td> <!-- Table data -->
+                <td>kjackson@bayviewglen.ca</td>
+                <td>16</td>
+            </tr> 
+            <tr>
+                <td>John Doe</td>
+                <td>jode@something.com</td>
+                <td>35</td>
+            </tr>    
+        </tbody>
+    </table>
+
+    <br> <!-- Adds a break in the page -->
+    <hr> <!-- Adds a horizontal line across the page -->
+    <br>
+
+    <!-- Forms -->
+    <!-- <form action="something.php" method="POST"> -->
+    <form>
+        <div> <!-- Puts whatever is after on a new line -->
+            <label>First Name</label> <!-- Label for input box -->
+            <input type="text" name="first-name"> <!-- Input box -->
+        </div>
+        <br>
+        <div>
+            <label>Last Name</label> 
+            <input type="text" name="last-name"> 
+        </div>
+        <br>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email"> <!-- Input type of email which adds some validation -->
+        </div>
+        <br>
+        <div>
+            <label>Message</label>
+            <textarea type="message" name="message"></textarea> <!-- Larger space for more text -->
+        </div>
+        <br>
+        <div>
+            <label>Gender</label>
+            <select name="gender"> <!-- Drop down menu with selectable options -->
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Age:</label>
+            <input type="number" name="age"> <!-- Number input with arrows to incriment the number of choice -->
+        </div>
+        <br>
+        <div>
+            <label>Date of Birth</label>
+            <input type="date" name="birthday"> <!-- Date input -->
+        </div>
+        <br>
+        <div>
+            <label>Important Info</label>
+            <!-- Placeholder attribute adds text in the backgroud of the field which will be typed over -->
+            <input type="text" name="info" placeholder="This field is optional">
+        </div>
+        <br>
+        <input type="submit" name="submit" value="Submit"> <!-- Submit button -->
+    </form>
+    <br>
+
+    <!-- Button -->
+    <button>Click me!</button> <!-- Creates a button, currently does nothing -->
+    <br>
+
+    <!-- Image -->
+    <img src="images/vergil chair.jpeg" alt="My Sample Image" width="200"> <!-- For displaying images (src attribute holds the image to be displayed) -->
+    <br> <!-- images/ navigates to my images folder to grab the image --> <!-- WIdth attribute changes image dimensions -->
+
+    <a href="images/vergil chair.jpeg"> <!-- Opens image in new tab when clicked -->
+        <img src="images/vergil chair.jpeg">
+    </a>
+
+    <!-- Quotations -->
+    <blockquote cite="https://samplewebsite.com"> <!-- Stylized block of text -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates ut ratione corrupti, dolores doloremque, iure optio deleniti possimus praesentium consequuntur. Soluta eos porro commodi molestias? Veritatis illum dolorem voluptate! Ea nesciunt voluptates porro at magni, cumque voluptatibus fugiat ab aliquid quis impedit ipsa nihil possimus fuga consequatur odit consectetur.
+    </blockquote> <!-- Site only shows in the source code -->
+
+    <p>The <abbr title="World Wide Web">WWW</abbr>is awesome</p> <!-- abbr tag adds dotted lines below the wrapped text -->
+
+    <p><cite>HTML file by Kyle J</cite></p> <!-- Cite tag italicizes the wrapped text to imply it is cited -->
+
+    <!-- HTML5 Sematic Tags -->
+    <!-- Sematic elements clearly describe its function to both the browser and the developer -->
+    <!--
+        <header></header> Top of the page
+        <footer></footer> Bottom of the page 
+        <aside></aside> Text on the right side of the page (side text)
+        <main></main>
+        <article></article> Main text
+        <nav></nav> Navigation bar
+        <section></section> Sort of like the coffee text
+        <details></details>
+    -->
 </body>
 </html>
