@@ -86,15 +86,15 @@ a:active {
     padding:8px;
     width:100%;
 }
-.form input[type="text"], .form textarea {
-    padding:8px;
+.form input[type="text"], .form textarea { /*Modifies the textarea (textbox)*/
+    padding:88px;
     width:100%;
 }
 .button{
     background-color:#333;
     color:#fff;
 }
-.button:hover{
-    background:red;
-    color:#fff;
+.button:hover{ /*changes the colour of the button and button text when hovered*/
+    background:red; /*button colour*/
+    color:#fff; /*button text colour*/
 }
