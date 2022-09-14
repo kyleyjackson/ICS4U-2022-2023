@@ -21,14 +21,23 @@
             width: 10%;
         }
 
-        .items img{
-            padding-right: 1000px;
+        .items:hover{
+            color:  limegreen;
+        }
+
+        .image {
+            width: 200px;
+        }
+
+        .items:nth-child(1) { /*Selects a specific item*/
+            margin-right: auto;
+            padding-left: 50px;
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <div class="items"><img src="./images/bvg.jfif" class="image"></div>
+        <div class="items"><img src="./images/bvg.jfif" alt class="image"></div>
         <div class="items">COVID-19</div>
         <div class="items">Parent and Student Resources</div>
         <div class="items">Alumni</div>
