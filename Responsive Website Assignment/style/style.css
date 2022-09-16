@@ -1,0 +1,28 @@
+/*Global*/
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/*Header*/
+#header{
+    flex: left;
+}
+
+/*Navbar*/
+#navbar{
+    background-color: #4c665b;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+}
+
+#current{
+    color: darkolivegreen;
+}
+
+.items{
+    color: white;
+    padding: 0, 10px;
+    width: 10%;
+}
