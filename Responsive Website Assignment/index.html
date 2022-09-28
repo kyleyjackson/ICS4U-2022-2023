@@ -11,20 +11,50 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div id="header-main">
-                <h1>JHIN</h1>
-            </div>
+        <div class="container" id="nav1">
             <nav>
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="why_jhin.html">Why Jhin?</a></li>
-                    <li><a href="abilities.html">Abilities</a></li>
-                    <li><a href="skins.html">Skins</a></li>
-                    <li><a href="newsletter.html">newsletter</a></li>
-                </ul>
+                <div><h1>JHIN</h1></div>
+                <div><a href="index.html" class="current">HOME</a></div>
+                <div><a href="why_jhin.html">WHY JHIN?</a></div>
+                <div><a href="abilities.html">ABILITIES</a></div>
+                <div><a href="skins.html">SKINS</a></div>
+                <div><a href="newsletter.html">NEWSLETTER</a></div>
             </nav>
         </div>
+
+        <div class="container" id="nav2">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+            <ul class="menu">
+              <li><a href="index.html" class="current">HOME</a></li>
+              <li><a href="why_jhin.html">WHY JHIN?</a></li>
+              <li><a href="abilities.html">ABILITIES</a></li>
+              <li><a href="skins.html">SKINS</a></li>
+              <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </div>
     </header>
+
+    <div class="grid-container">
+        <section id="showcase">
+            <h1>INTRODUCING: JHIN, THE VIRTUOSO</h1>
+            <img src="./images/jhin.jpg">
+        </section>
+
+        <section id="sidebar">
+            <div id="sidebar-top">
+                <img src="./images/dancing_grenade.jpg">
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur illo dignissimos necessitatibus eaque voluptas consectetur accusantium animi velit. Nemo, aliquam!</h3>
+            </div>
+            <div id="sidebar-bottom">
+                <img src="./images/curtain_call.jpg">
+                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum placeat incidunt provident blanditiis tempore voluptatibus, asperiores qui quaerat aliquid illum!</h3>
+            </div>
+        </section>
+
+        <section id="footer">temp-footer</section>
+    </div>
 </body>
 </html>

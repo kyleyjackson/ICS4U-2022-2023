@@ -14,7 +14,7 @@ body {
     display: grid;
 
     grid-template-areas:
-    'nav header header'
+    'nav header sidebar'
     'nav content sidebar'
     'nav footer footer';
 
