@@ -36,7 +36,7 @@ body {
   }
   
   nav div a:hover{
-    color:#7e5b0f;
+    color:#443e36;
   }
   
   .current{
@@ -120,7 +120,7 @@ body {
     }
   
     a:hover{
-      color: #be8b49;
+      color: #443e36;
     }
     
     .container {
@@ -129,7 +129,7 @@ body {
       align-items: center;
       justify-content: space-between;
       background-color: #000000;
-      background: linear-gradient(to left, #f46b45, #eea849); /*Creates a gradient for the background*/
+      background: linear-gradient(to left, #160f0c, #201d18); /*Creates a gradient for the background*/
       color: #FFF;
       height: 50px;
       padding: 1em;
@@ -249,7 +249,14 @@ body {
     .menu > li:not(:last-child) {
       border-bottom: 1px solid #444;
     }
-  
+    
+    #article-top {
+      padding-right: 30px;
+    }
+
+    #article-bottom {
+      padding-right: 30px;
+    }
   }
   
   @media (max-width: 530px) {
