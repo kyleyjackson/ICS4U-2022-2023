@@ -42,6 +42,10 @@ nav div a:hover{
   color:#834a00;
 }
 
+.current:hover{
+  color:#834a00;
+}
+
 nav div:nth-child(1){
   margin-right: auto;
   padding-left: 100px;
@@ -90,6 +94,7 @@ nav div:last-child{
 
 /*Sidebar*/
 #sidebar{
+  padding-right: 30px;
   grid-area: aside;
   background-color: rgb(27, 27, 27);
   padding-left: 30px;
@@ -325,7 +330,6 @@ nav div:last-child{
     grid-area: sidebar;
     text-align: center;
     padding-left: 30px;
-    padding-right: 30px;
   }
 
   #footer{

@@ -42,6 +42,10 @@ body {
   .current{
     color:#613030;
   }
+
+  .current:hover{
+    color:#613030;
+  }
   
   nav div:nth-child(1){
     margin-right: auto;

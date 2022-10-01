@@ -7,19 +7,33 @@
     <meta name="keywords" content="jhin website">
     <meta name="author" content="Kyle Jackson">
     <title>Jhin | Skins</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/dwg.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container" id="nav1">
             <nav>
-                <div><h1>JHIN</h1></div>
+                <div><h1><a href=index.html>JHIN</a></h1></div>
                 <div><a href="index.html">HOME</a></div>
                 <div><a href="why_jhin.html">WHY JHIN?</a></div>
                 <div><a href="abilities.html">ABILITIES</a></div>
                 <div><a href="skins.html" class="current">SKINS</a></div>
                 <div><a href="newsletter.html">NEWSLETTER</a></div>
             </nav>
+        </div>
+
+        <div class="container" id="nav2">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+            <ul class="menu">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="why_jhin.html">WHY JHIN?</a></li>
+              <li><a href="abilities.html">ABILITIES</a></li>
+              <li><a href="skins.html" class="current">SKINS</a></li>
+              <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
         </div>
     </header>
 </body>
