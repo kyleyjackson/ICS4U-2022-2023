@@ -1,0 +1,222 @@
+/*Global*/
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    font: 15px/1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+  }
+  
+  /*Navbar*/
+  #nav2{
+    display: none;
+  }
+  
+  nav{
+    background: #181810;
+    color: #fff; 
+    border-bottom: #502030 10px solid;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav div{
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  
+  nav div a{
+    font-weight: bold;
+    text-decoration: none;
+    color:#fff;
+  }
+  
+  nav div a:hover{
+    color:#887858;
+  }
+  
+  .current{
+    color:#502030;
+  }
+  
+  .current:hover{
+    color:#502030;
+  }
+  
+  nav div:nth-child(1){
+    margin-right: auto;
+    padding-left: 100px;
+    font-size: 22px;
+  }
+  
+  nav div:last-child{
+    padding-right: 30px;
+  }
+
+  @media (max-width: 1024px) {
+    #landscape {
+      display: none;
+    }
+  
+    #portrait{
+      display: block;
+      padding-left: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2 {
+      vertical-align: center;
+      text-align: center;
+    }
+    
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    
+    * { /*Sets global font + box sizing*/
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+  
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+  
+    a:hover{
+      color: #887858;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #181810;
+      background: linear-gradient(to left, #887858, #502030); /*Creates a gradient for the background*/
+      color: #FFF;
+      height: 50px;
+      padding: 1em;
+    }
+    
+    .menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .menu > li { /*Selects all li elements where the parent is the menu class*/
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+    
+    .menu-button-container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column; /*Specifies how flex items are placed in the flex container*/
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #menu-toggle {
+      display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before, /*Insert something before the menu-button class*/
+    .menu-button::after { /*Insert something after the menu-button class*/
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /*Tranforms the menu button according to the specified values*/
+      border-radius: 2px;
+    }
+    
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+    
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+    /*'+' operator in this case selects the first menu-button container placed after #menu-toggle elements*/
+    #menu-toggle:checked + .menu-button-container .menu-button::before { /*:checked selects every checked #menu-toggle element*/ 
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+  
+    #nav1{
+      display: none; /*Makes the static navbar disappear*/
+    }
+  
+    #nav2{
+      display: block; /*Displays the hamburger menu in place of the static navbar*/
+    }
+  
+    .menu-button-container {
+      display: flex;
+    }
+  
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #menu-toggle ~ .menu li { /*Selects every "menu li" class that is preceeded by #menu-toggle*/
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+  
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
