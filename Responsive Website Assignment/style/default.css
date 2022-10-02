@@ -6,7 +6,7 @@ body {
     font: 15px/1.5;
     padding: 0;
     margin: 0;
-    background-color: #fff;
+    background-color: #333;
   }
   
   /*Navbar*/
@@ -56,6 +56,135 @@ body {
     padding-right: 30px;
   }
 
+  .h1{
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    text-shadow: 5px 5px #000; /*Text shadow effect*/
+  }
+
+  .grid-container{
+    display: grid;
+
+    grid-template-columns: 2fr 1px 2fr;
+    grid-template-rows: 2fr 2fr 80px;
+
+    grid-gap: 50px; /*Adds a gap in between grid cells*/
+
+    grid-template-areas: 
+    'Q empty W'
+    'E empty R'
+    'f f f';
+  }
+  
+  .dancing-grenade{
+    grid-area: Q;
+    text-align: center;
+    margin: auto;
+    background-color: #181810;
+    color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px #000; /*Shadow effect on the box (whole div) */
+  }
+
+  .dancing-grenade img{
+    padding-top: 30px;
+    max-width: 256px;
+  }
+
+  .dancing-grenade h3{
+    font-weight: bold;
+    font-size: 48px;
+  }
+
+  .dancing-grenade p{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .deadly-flourish{
+    grid-area: W;
+    text-align: center;
+    margin: auto;
+    background-color: #502030;
+    color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px #000;
+  }
+
+  .deadly-flourish img{
+    padding-top: 30px;
+    max-width: 256px;
+  }
+
+  .deadly-flourish h3{
+    font-weight: bold;
+    font-size: 48px;
+  }
+
+  .deadly-flourish p{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .captive-audience{
+    grid-area: E;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(34, 0, 49);
+    color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px #000;
+  }
+
+  .captive-audience img{
+    padding-top: 30px;
+    max-width: 256px;
+  }
+
+  .captive-audience h3{
+    font-weight: bold;
+    font-size: 48px;
+  }
+
+  .captive-audience p{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .curtain-call{
+    grid-area: R;
+    text-align: center;
+    margin: auto;
+    background-color: #887858;
+    color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px #000;
+  }
+
+  .curtain-call img{
+    padding-top: 30px;
+    max-width: 256px;
+  }
+
+  .curtain-call h3{
+    font-weight: bold;
+    font-size: 48px;
+  }
+
+  .curtain-call p{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  footer{
+    grid-area: f;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    background: #502030;
+  }
+
   @media (max-width: 1024px) {
     #landscape {
       display: none;
@@ -81,6 +210,38 @@ body {
     * { /*Sets global font + box sizing*/
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       box-sizing: border-box;
+    }
+
+    .grid-container{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 80px;
+      
+      grid-template-areas: 
+      'Q'
+      'W'
+      'E'
+      'R'
+      'footer';
+    }
+
+    .dancing-grenade{
+      grid-area: Q;
+    }
+
+    .deadly-flourish{
+      grid-area: W;
+    }
+
+    .captive-audience{
+      grid-area: E;
+    }
+
+    .curtain-call{
+      grid-area: R;
+    }
+
+    .footer{
+      grid-area: footer;
     }
   
     a{

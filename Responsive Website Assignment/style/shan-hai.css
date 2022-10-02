@@ -304,6 +304,7 @@ nav div:last-child{
   .container{
     width: 530px;
   }
+  
   .grid-container{
     grid-template-rows: 1fr 1fr 80px;
     grid-template-columns: 1fr;

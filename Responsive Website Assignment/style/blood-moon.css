@@ -62,12 +62,81 @@ body {
   .grid-container{
     display: grid;
 
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 776px 80px;
 
     grid-template-areas: 
-    'content'
-    'footer';
+    'content social'
+    'footer footer';
+  }
+  
+  .socials{
+    grid-area: social;
+    text-align: center;
+    margin: auto;
+    color: white;
+    background-color: #420606;
+    border-radius: 10%;
+    box-shadow: 5px 5px rgb(5, 6, 10);
+  }
+
+  .grid-container-2{
+    display: grid;
+
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 100px 100px;
+
+    grid-template-areas:
+    'ig t'
+    'yt yt';
+  }
+
+  .instagram{
+    grid-area: ig;
+    text-align: center;
+    margin: auto;
+  }
+
+  .instagram a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+
+  .twitter{
+    grid-area: t;
+    text-align: center;
+    margin: auto;
+  }
+
+  .twitter a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+
+  .youtube{
+    grid-area: yt;
+    text-align: center;
+    margin: auto;
+  }
+
+  .youtube a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+
+  #iicon{
+    max-width: 16px;
+  }
+
+  #ticon{
+    max-width: 16px;
+  }
+
+  #yticon{
+    max-width: 16px;
   }
 
   .newsletter{
@@ -121,6 +190,31 @@ body {
   }
 
   @media (max-width: 768px) {
+    .grid-container{
+      display: grid;
+
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 500px 80px;
+
+      grid-template-areas: 
+      'newsletter'
+      'socials'
+      'footer';
+    }
+
+    .newsletter{
+      grid-area: newsletter;
+    }
+
+    .socials{
+      grid-area: socials;
+      padding-top: 30px;
+    }
+
+    .footer{
+      grid-area: footer;
+    }
+
     h2 {
       vertical-align: center;
       text-align: center;
