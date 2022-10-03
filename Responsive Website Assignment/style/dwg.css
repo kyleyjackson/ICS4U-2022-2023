@@ -179,6 +179,10 @@ body {
   }
 
 @media (max-width: 768px) {
+  body{
+    background-size: cover;
+  }
+  
     h2 {
       vertical-align: center;
       text-align: center;
