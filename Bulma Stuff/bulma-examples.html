@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Bulma Examples</title>
+</head>
+<body>
+    <p>Style is removed from all elements</p>
+    <h1>Header 1</h1> 
+    <h2>Header 2</h2>
+    <h3>Header 3</h3> 
+
+    <p>Apply classes to style an element</p>
+    <h1 class="button is-danger">test</h1>
+
+    <p>Most Bulma elements have alternative styles. To apply them, you only need to append one of the modifier classes. They all start with is- or has-</p>
+    <!-- Colours -->
+    <button class="button is-primary">
+        Button
+      </button>
+      <button class="button is-link">
+        Button
+      </button>
+      <button class="button is-info">
+        Button
+      </button>
+      <button class="button is-success">
+        Button
+      </button>
+      <button class="button is-warning">
+        Button
+      </button>
+      <button class="button is-danger">
+        Button
+      </button>
+
+      <!-- Sizes -->
+      <button class="button is-small">
+        Button
+      </button>
+      <button class="button">
+        Button
+      </button>
+      <button class="button is-medium">
+        Button
+      </button>
+      <button class="button is-large">
+        Button
+      </button>
+
+      <!-- Styles + States -->
+      <button class="button is-primary is-outlined">
+        Button
+      </button>
+      <button class="button is-loading">
+        Button
+      </button>
+      <button class="button" disabled>
+        Button
+      </button>
+
+      <!-- Combining Elements -->
+      <button class="button is-primary is-small" disabled>
+        Button
+      </button>
+      <button class="button is-info is-loading">
+        Button
+      </button>
+      <button class="button is-danger is-outlined is-large">
+        Button
+      </button>
+
+      <div class="container">
+        <!-- Stacks columns after reaching tablet dimensions -->
+        <!-- Bulma automatically completes media queries -->
+        <div class="columns is-tablet">
+            <div class="column is-two-fifths">
+                <p class="is-primary notification">
+                    Column #1
+                </p>
+            </div>
+            <div class="column">
+                <p class="is-danger notification">
+                    Column #2
+                </p>
+            </div>
+            <div class="column">
+                <p class="is-warning notification">
+                    Column #3
+                </p>
+            </div>
+            <div class="column">
+                <p class="is-info notification">
+                    Column #4
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        <div class="column is-2">
+            <p class="is-info notification">
+                Column
+            </p>
+        </div>
+        <div class="column is-5">
+            <p class="is-info notification">
+                Column
+            </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <section class="hero has-background-link-dark">
+            <div class="hero-body">
+                <p class="title has-text-info-light">Hero Title</p>
+                <p class="subtitle has has-text-info-light">Hero Subtitle</p>
+            </div>
+        </section>
+      </div>
+</body>
+</html>
