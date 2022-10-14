@@ -5,17 +5,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bulma Login Form</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <style>
+            figure{
+                width: 200px;
+                position: absolute;
+                left: 125px;
+                bottom: 100px;
+            }
+
+            .img{
+                position: absolute;
+                border: 10px solid white;
+            }
+
+            .box2{
+                position: absolute;
+            }
+
+            html{
+                background:rgb(240, 240, 240);
+            }
+        </style>
     </head>
     <body>
         <section class="section">
             <div class="hero">
-                <div class="container">
-                    <div class="title">Login</div>
+                <div class="container" style="padding-bottom: 50px;padding-top: 100px">
+                    <div class="title has-text-weight-bold">Login</div>
                 </div>
             </div>
-            <br>
-            <hr> <!-- Adds a line break-->
-            <br>
+
+            <div class="container" style="background: rgb(105, 105, 105);height: 2px;width: 37%"></div>
+
+            <div class="container" style="padding-top: 150px">
+                <div class="columns is-centered">
+                    <div class="column is-6-tablet is-6-desktop is-4-widescreen">
+                        <form action="" class="box2 box">
+                            <div class="field" style="padding-top:100px">
+                                <div class="control">
+                                    <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="password" placeholder="Your Email" class="input" required>
+                                </div>
+                            </div>
+                            <div class="field" style="text-align: center">
+                                <label for="" class="checkbox"><input type="checkbox"> Remember me</label>
+                            </div>
+                            <div class="field" style="text-align: center">
+                                <button class="button is-info is-centered has-text-weight-bold" style="height: 50px;width:400px">Login</button>
+                            </div>
+                        </form>
+                        <figure class="image">
+                            <img class="img is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
         </section>
     </body>
 </html>
