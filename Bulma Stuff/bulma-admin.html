@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bulma Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <style>
+    </style>
   </head>
   <body>
-    <div class="has-background-link" style="height: 5px;"></div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand" style="padding-left: 50px">
+    <div class="has-background-link is-size-7">.</div>
+    <nav class="navbar py-3" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand pl-5">
             <a class="navbar-item">
                 <a class="navbar-item">Bulma Login</a>
             </a>
@@ -25,21 +28,21 @@
         </div>
     </nav>
 
-    <section class="section has-background-light">
-        <div class="columns">
-            <div class="column is-one-fifth">
+    <section class="section has-background-light py-5">
+        <div class="columns pb-5">
+            <div class="column is-one-third">
                 <aside class="menu has-text-weight-bold">
-                <p class="menu-label">
+                <p class="menu-label py-3">
                   General
                 </p>
-                <ul class="menu-list">
+                <ul class="menu-list mb-3">
                   <li><a class="text has-text-link">Dashboard</a></li>
                   <li><a>Customers</a></li>
                 </ul>
-                <p class="menu-label">
+                <p class="menu-label py-3">
                   Administration
                 </p>
-                <ul class="menu-list">
+                <ul class="menu-list mb-3">
                   <li><a>Team Settings</a></li>
                   <li>
                     <a>Manage Your Team</a>
@@ -53,86 +56,120 @@
                   <li><a>Cloud Storage Environment Settings</a></li>
                   <li><a>Authentication</a></li>
                 </ul>
-                <p class="menu-label">
+                <p class="menu-label py-3">
                   Transactions
                 </p>
-                <ul class="menu-list">
+                <ul class="menu-list mb-3">
                   <li><a>Payments</a></li>
                   <li><a>Transfers</a></li>
                   <li><a>Balance</a></li>
                 </ul>
               </aside>
-        </div>
-        <div class="column">
-            <nav class="breadcrumb" aria-label="breadcrumbs">
+            </div>
+            <div class="column">
+              <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                   <li><a href="#">Bulma</a></li>
-                  <li><a href="#">Templates</a></li>
-                  <li><a href="#">Examples</a></li>
-                  <li class="is-active"><a href="#" aria-current="page">Admin</a></li>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Components</a></li>
+                  <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
                 </ul>
               </nav>
-              <div class="container" style="padding-bottom: 50px;">
-                    <section class="hero" style="background: linear-gradient(to left, #50a9e4, #022949)">
-                        <div class="hero-body">
-                            <p class="title has-text-info-light">Hello, Admin.</p>
-                            <p class="subtitle has-text-info-light">I hope you are having a great day</p>
-                        </div>
-                    </section>
+
+              <div class="hero" style="background: linear-gradient(0.25turn, #294989, #1b8793)">
+                <div class="hero-body">
+                  <p class="title has-text-white">Hello Admin.</p>
+                  <p class="subtitle has-text-white">I hope you had a nice day!</p>
+                </div>
               </div>
-            <div class="columns">
-                <div class="column">
-                    <div class="level">
-                        <div class="level-item has-text-centered">
-                            <div class="box" style="width: 275px">
-                                <p class="title">439k</p>
-                                <p class="heading">Users</p>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="level">
-                        <div class="level-item has-text-centered">
-                            <div class="box" style="width: 275px">
-                                <p class="title">59k</p>
-                                <p class="heading">Products</p>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="level">
-                        <div class="level-item has-text-centered">
-                            <div class="box" style="width: 275px">
-                                <p class="title">3.4k</p>
-                                <p class="heading">Open Orders</p>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="level">
-                        <div class="level-item has-text-centered">
-                            <div class="box" style="width: 275px">
-                                <p class="title">19</p>
-                                <p class="heading">Exceptions</p>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="columns">
-                <div class="column">
-
+              <div class="columns pt-4">
+                <div class="column is-3">
+                  <div class="box">
+                    <nav class="level">
+                      <div class="level-item has-text-centered">
+                         <div>
+                          <p class="title">439k</p>
+                          <p class="heading">Users</p>
+                         </div>
+                      </div>
+                    </nav>
+                  </div>
                 </div>
-                <div class="column">
 
+                <div class="column is-3">
+                  <div class="box">
+                    <nav class="level">
+                      <div class="level-item has-text-centered">
+                         <div>
+                          <p class="title">59k</p>
+                          <p class="heading">Products</p>
+                         </div>
+                      </div>
+                    </nav>
+                  </div>
                 </div>
+
+                <div class="column is-3">
+                  <div class="box">
+                    <nav class="level">
+                      <div class="level-item has-text-centered">
+                         <div>
+                          <p class="title">3.4k</p>
+                          <p class="heading">Open Orders</p>
+                         </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+
+                <div class="column is-3">
+                  <div class="box">
+                    <nav class="level">
+                      <div class="level-item has-text-centered">
+                         <div>
+                            <p class="title">19</p>
+                            <p class="heading">Exceptions</p>
+                         </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+
+              <div class="columns">
+                <div class="column is-6">
+                  <table class="table is-fullwidth is-scrollable">
+                    <thead>
+                      <tr>
+                        <th>
+                          <div>Actions</div>
+                        </th>
+                      </tr>
+                      <tr>
+                        
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
+                <div class="column is-6">
+                  <div class="card">
+                    <div class="field">
+                      <label class="label">Label</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
-    </div>
-  </section>
+    </section>
   </body>
 </html>
