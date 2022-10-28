@@ -58,15 +58,17 @@
             if(key === 'CLS' || key === 0) {
                 buttonElement.setAttribute('class', 'wide-button-1 key');
                 buttonElement.textContent = key;
-                buttonElement.addEventListener('click', () => clicked(key))
+                buttonElement.addEventListener('click', () => clicked(key));
                 container.append(buttonElement);
             }else if(key === '=') {
                 buttonElement.setAttribute('class', 'wide-button-2 key');
                 buttonElement.textContent = key;
+                buttonElement.addEventListener('click', () => clicked(key));
                 container.append(buttonElement);
             }else {
                 buttonElement.setAttribute('class', 'key');
                 buttonElement.textContent = key;
+                buttonElement.addEventListener('click', () => clicked(key));
                 container.append(buttonElement);
             }
         });
@@ -80,7 +82,7 @@
         if(letter === 'CLS') {
             result.textContent = '';
         }else if(letter === '=') {  
-            result.textContent += 'equals test';
+            result.textContent = 'ERROR';
         }else {
             result.textContent += letter;
         }
