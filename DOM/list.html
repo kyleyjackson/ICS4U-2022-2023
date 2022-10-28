@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+   <title>Javascript list</title>
+   
+   <style>
+      li {
+         margin-bottom: 10px;
+         padding-left: 10px;
+      }
+
+      li button {
+         font-size: 8px;
+         margin-left: 20px;
+         color: rgb(255, 0, 0);
+      }
+
+      #item {
+        height: 40px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1 class="title is-info">List</h1>
+
+   <div>
+      <label for="item" class="">Enter Item:</label>
+      <input type="text" name="item" id="item">
+      <button id="addItem" class="button is-info">Add</button>
+   </div>
+
+   <ul>
+
+   </ul>
+
+   <script>
+      const input = document.querySelector('#item');
+      const btn = document.querySelector('#addItem');
+      const itemList = document.querySelector('ul');
+
+      const addItem = function addItem() {
+         const itemText = input.value;
+         if (itemText !== undefined && itemText !== '') {
+            const li = document.createElement('li');
+            li.textContent = itemText;
+            itemList.appendChild(li);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', () => removeButton.parentElement.remove());
+
+            li.appendChild(removeButton);
+
+
+            input.value = '';
+            item.focus();
+         }
+      }
+
+      btn.addEventListener('click', addItem);
+      input.focus();
+
+      const arr = [1, 2, 3, , , , 6];
+      arr.forEach((a, b, c) => {
+         console.log('Element: ' + a);
+         console.log('Index: ' + b);
+         console.log('Whole Array: ' + c);
+      });
+   </script>
+</body>
+
+</html>
