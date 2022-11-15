@@ -1,0 +1,93 @@
+/* NAVBAR */
+.current-page {
+    background-color: hsl(0, 0%, 96%);
+    font-weight: bold;
+}
+
+/* MAIN STANDINGS */
+#east-column .card-header {
+    border-bottom: darkgreen 3px solid;
+}
+
+#central-column .card-header {
+    border-bottom: steelblue 3px solid;
+}
+
+#west-column .card-header {
+    border-bottom: maroon 3px solid;
+}
+
+#south-column .card-header {
+    border-bottom: peru 3px solid;
+}
+
+/* SIDE STANDINGS */
+#small-card-east .card-header {
+    border-bottom: darkgreen 3px solid;
+}
+
+#small-card-central .card-header {
+    border-bottom: steelblue 3px solid;
+}
+
+#small-card-west .card-header {
+    border-bottom: maroon 3px solid;
+}
+
+#small-card-south .card-header {
+    border-bottom: peru 3px solid;
+}
+
+#small-card-east {
+    border-bottom: hsl(0, 0%, 86%) 5px solid;
+}
+
+#small-card-central {
+    border-top: hsl(0, 0%, 86%) 5px solid;
+    border-bottom: hsl(0, 0%, 86%) 5px solid;
+}
+
+#small-card-west {
+    border-top: hsl(0, 0%, 86%) 5px solid;
+    border-bottom: hsl(0, 0%, 86%) 5px solid;
+}
+
+#small-card-south {
+    border-top: hsl(0, 0%, 86%) 5px solid;
+}
+
+/* FILTER MENU */
+#filter-menu .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#filter-menu .card-content button {
+    width: 150px;
+}
+
+#filter-menu .card-content button:hover {
+    background-color: rgb(101, 101, 101);
+    color: white;
+}
+
+.dropdown-trigger button {
+    width: 195px;
+}
+
+#up-down-menu .is-active {
+    background-color: rgb(101, 101, 101);
+    color: white;
+}
+
+#filter-menu .is-active {
+    background-color:  rgb(101, 101, 101);
+    color: white;
+}
+
+/* PAGINATION */
+.active {
+    background-color: grey;
+    color: white;
+}

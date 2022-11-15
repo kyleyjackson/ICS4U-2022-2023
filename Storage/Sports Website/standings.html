@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Standings | AUDL</title>
+</head>
+<body class="has-background-light" onload="standingsOnload();">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="standings.html">
+                <p class="is-size-3 px-4 has-text-weight-bold">AUDL STANDINGS</p>
+            </a>
+        </div>
+        <div id="navbar-main" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item current-page" href="standings.html">Standings</a>
+                <a class="navbar-item" href="schedule.html">Schedule</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div>
+                        <a class="button is-dark" href="login.html">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-centered pt-6">
+        <div class="column is-3 pr-6 is-size-7">
+            <div class="card">
+                <div class="card-content has-background-grey-lighter">
+                    <div class="content">
+                        <div class="card is-shadowless" id="small-card-east">
+                            <header class="card-header">
+                                <p class="card-header-title is-size-6 has-text-success-dark">EAST</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <table id="east-scores" class="table is-striped">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card is-shadowless" id="small-card-central">
+                            <header class="card-header">
+                                <p class="card-header-title is-size-6 has-text-info">CENTRAL</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <table id="central-scores" class="table is-striped">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card is-shadowless" id="small-card-west">
+                            <header class="card-header">
+                                <p class="card-header-title is-size-6 has-text-danger-dark">WEST</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <table id="west-scores" class="table is-striped">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card is-shadowless" id="small-card-south">
+                            <header class="card-header">
+                                <p class="card-header-title is-size-6 has-text-warning-dark">SOUTH</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <table id="south-scores" class="table is-striped">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-6">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <p class="title has-text-weight-bold">STANDINGS</p>
+                        <div class="columns is-centered" id="east-column">
+                            <div class="column">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title has-text-success-dark">East Division</p>
+                                    </header>
+                                    <div class="card-content has-background-grey-lighter">
+                                        <div class="content">
+                                            <table id="east-standings" class="table is-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Team</th>
+                                                        <th>Wins</th>
+                                                        <th>Losses</th>
+                                                        <th>+/-</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns pt-5 is-centered" id="central-column">
+                            <div class="column">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title has-text-info">Central Division</p>
+                                    </header>
+                                    <div class="card-content has-background-grey-lighter">
+                                        <div class="content">
+                                            <table id="central-standings" class="table is-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Team</th>
+                                                        <th>Wins</th>
+                                                        <th>Losses</th>
+                                                        <th>+/-</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns pt-5 is-centered" id="west-column">
+                            <div class="column">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title has-text-danger-dark">West Division</p>
+                                    </header>
+                                    <div class="card-content has-background-grey-lighter">
+                                        <div class="content">
+                                            <table id="west-standings" class="table is-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Team</th>
+                                                        <th>Wins</th>
+                                                        <th>Losses</th>
+                                                        <th>+/-</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns pt-5 is-centered" id="south-column">
+                            <div class="column">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title has-text-warning-dark">South Division</p>
+                                    </header>
+                                    <div class="card-content has-background-grey-lighter">
+                                        <div class="content">
+                                            <table id="south-standings" class="table is-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Team</th>
+                                                        <th>Wins</th>
+                                                        <th>Losses</th>
+                                                        <th>+/-</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-2 pl-6" id="filter-menu">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">FILTER</p>
+                </header>
+                <div class="card-content has-background-grey-lighter">
+                    <div class="content">
+                        <div class="columns">
+                            <div class="column">
+                                <button id="sort-name" class="button" onclick="sortName();">NAME</button>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <button id="sort-wins" class="button" onclick="sortWins();">WINS</button>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <button id="sort-losses" class="button" onclick="sortLosses();">LOSSES</button>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <button id="sort-pm" class="button" onclick="sortPlusMinus();">PLUS/MINUS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-6" id="up-down-menu">
+                <header class="card-header">
+                    <p class="card-header-title">ORDER</p>
+                </header>
+                <div class="card-content has-background-grey-lighter">
+                    <div class="content">
+                        <div class="columns">
+                            <div class="column">
+                                <button class="button" onclick="setAscending('true');" id="descending">HIGHEST</button>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <button class="button" onclick="setAscending('false');" id="ascending">LOWEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
