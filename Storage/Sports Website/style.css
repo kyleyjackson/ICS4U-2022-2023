@@ -82,12 +82,22 @@
 }
 
 #filter-menu .is-active {
-    background-color:  rgb(101, 101, 101);
+    background-color: rgb(101, 101, 101);
     color: white;
 }
 
 /* PAGINATION */
-.active {
-    background-color: grey;
+.is-active-week {
+    background-color: rgb(101, 101, 101);
     color: white;
+}
+
+.is-active-week:hover {
+    background-color: rgb(101, 101, 101);
+    color: white;
+}
+
+/* GAME CARDS */
+.scoreline {
+    text-align: center;
 }
