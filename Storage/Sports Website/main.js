@@ -29,6 +29,24 @@ let centralDiv = JSON.parse(teamsCentral);
 let westDiv = JSON.parse(teamsWest);
 let southDiv = JSON.parse(teamsSouth);
 
+let week1Parsed = JSON.parse(week1);
+let week2Parsed = JSON.parse(week1);
+let week3Parsed = JSON.parse(week1);
+let week4Parsed = JSON.parse(week1);
+let week5Parsed = JSON.parse(week1);
+let week6Parsed = JSON.parse(week1);
+let week7Parsed = JSON.parse(week1);
+let week8Parsed = JSON.parse(week1);
+let week9Parsed = JSON.parse(week1);
+let week10Parsed = JSON.parse(week1);
+let week11Parsed = JSON.parse(week1);
+let week12Parsed = JSON.parse(week1);
+let week13Parsed = JSON.parse(week1);
+let week14Parsed = JSON.parse(week1);
+let playoffsParsed = JSON.parse(week1);
+let champsParsed = JSON.parse(week1);
+let allstarsParsed = JSON.parse(week1);
+
 //Table Bodies
 
 //Main Bodies
@@ -95,32 +113,63 @@ console.log(teamsCentral);
 console.log(teamsWest);
 console.log(teamsSouth);*/
 
-getNamesAndScores(week1);
+buildGameCard(week1Parsed);
 
 //Functions
 function buildSchedule(week) {
     
 }
 
-function buildGameCard(header, content, footer) {
 
+function buildGameCard(games) {
+    let cardOne = document.getElementById('half-one');
+    let cardTwo = document.getElementById('half-two');
+    let isCardOne = true;
+    let card = document.createElement('div');
+    let cardContent = document.createElement('div');
+    let content = document.createElement('div');
+    let pp = document.createElement('p');
+
+    card.classList.add('card');
+    cardContent.classList.add('card-content');
+    content.classList.add('content');
+
+    games.forEach((game) => {
+        if(isCardOne) {
+            cardOne.appendChild(card);
+            card.appendChild(cardContent);
+            cardContent.appendChild(content);
+    
+            isCardOne = false;
+        }else {
+            cardTwo.appendChild(card);
+            card.appendChild(cardContent);
+            cardContent.appendChild(content);
+    
+            isCardOne = true;
+        }
+    });
 }
 
-function getNamesAndScores(arr) {
-    
-    arr.forEach((game) =>)
-    let team1 = arr.Teams.substring(0, arr.Teams.indexOf("v") - 1);
-    let team2 = arr.Teams.substring(arr.Teams.indexOf("s") + 2);
-    let score1 = arr.Scoreline.substring(0, arr.Scoreline.indexOf("-"));
-    let score2 = arr.Scoreline.substring(arr.Scoreline.indexOf("-") + 1);
-
+//!Function only to be used if my current scorecard design sucks :(
+/*function getNamesAndScores(arr) {
+    let team1;
+    let team2;
+    let score1;
+    let score2;
+    arr.forEach((game) => {
+        team1 = arr.Teams.substring(0, arr.Teams.indexOf("v") - 1);
+        team2 = arr.Teams.substring(arr.Teams.indexOf("s") + 2);
+        score1 = arr.Scoreline.substring(0, arr.Scoreline.indexOf("-"));
+        score2 = arr.Scoreline.substring(arr.Scoreline.indexOf("-") + 1);
+    });
     console.log(team1);
     console.log(team2);
     console.log(score1);
     console.log(score2);
 
     return team1 + "-" + score1 + "-" + team2 + "-" + score2;
-}
+} */
 
 function paginate(week) {
     let active = document.getElementById(week);
@@ -132,7 +181,7 @@ function paginate(week) {
     active.classList.add('is-active-week');
 
     if(week === "week1") {
-        prevButton.setAttribute("disabled", "");
+        prevButton.setAttribute("disabled", ""); //Assign "disabled" html attribute to prevent users from interacting with the button
         nextButton.removeAttribute("disabled");
     }else if(week === "allstars") {
         prevButton.removeAttribute("disabled");
