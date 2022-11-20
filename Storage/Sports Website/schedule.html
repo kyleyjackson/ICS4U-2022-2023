@@ -86,37 +86,34 @@
                 </div>
             </div>
         </div>
-        <div class="column is-8">
+        <div class="column is-9">
             <nav class="pagination is-centered is-large" role="navigation" aria-label="pagination">
-                <a class="pagination-previous px-5">Previous</a>
-                <a class="pagination-next px-5">Next</a>
+                <a class="pagination-previous px-5" onclick="prevButtonClicked();">Previous</a>
+                <a class="pagination-next px-5" onclick="nextButtonClicked();">Next</a>
                 <ul class="pagination-list"> <!-- PAgination Buttons-->
-                    <li><a class="pagination-link" onclick="paginate('week1');" id="week1">1</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week2');" id="week2">2</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week3');" id="week3">3</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week4');" id="week4">4</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week5');" id="week5">5</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week6');" id="week6">6</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week7');" id="week7">7</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week8');" id="week8">8</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week9');" id="week9">9</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week10');" id="week10">10</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week11');" id="week11">11</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week12');" id="week12">12</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week13');" id="week13">13</a></li>
-                    <li><a class="pagination-link" onclick="paginate('week14');" id="week14">14</a></li>
-                    <li><a class="pagination-link" onclick="paginate('playoffs');" id="playoffs">15</a></li>
-                    <li><a class="pagination-link" onclick="paginate('champs');" id="champs">16</a></li>
-                    <li><a class="pagination-link" onclick="paginate('allstars');" id="allstars">17</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week1', week1Parsed);" id="week1">1</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week2', week2Parsed);" id="week2">2</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week3', week3Parsed);" id="week3">3</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week4', week4Parsed);" id="week4">4</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week5', week5Parsed);" id="week5">5</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week6', week6Parsed);" id="week6">6</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week7', week7Parsed);" id="week7">7</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week8', week8Parsed);" id="week8">8</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week9', week9Parsed);" id="week9">9</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week10', week10Parsed);" id="week10">10</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week11', week11Parsed);" id="week11">11</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week12', week12Parsed);" id="week12">12</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week13', week13Parsed);" id="week13">13</a></li>
+                    <li><a class="pagination-link" onclick="paginate('week14', week14Parsed);" id="week14">14</a></li>
+                    <li><a class="pagination-link" onclick="paginate('playoffs', playoffsParsed);" id="playoffs">15</a></li>
+                    <li><a class="pagination-link" onclick="paginate('champs', champsParsed);" id="champs">16</a></li>
+                    <li><a class="pagination-link" onclick="paginate('allstars', allstarsParsed);" id="allstars">17</a></li>
                 </ul>
             </nav>
             <div class="pagination-container">
                 <div class="columns">
-                    <div class="column is-5" id="half-one">
-                    </div>
-                    <div class="column is-5" id="half-two">
-
-                    </div>
+                    <div class="column is-5" id="half-one"></div>
+                    <div class="column is-5" id="half-two"></div>
                 </div>
             </div>
         </div>

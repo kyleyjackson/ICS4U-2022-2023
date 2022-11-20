@@ -10,13 +10,13 @@ const week2 = '[{"Teams":"BOS vs OTT", "Scoreline":"19-21", "DT":"5/6 7:00PM EDT
 const week3 = '[{"Teams":"MON vs PHI", "Scoreline":"18-17", "DT":"5/13 7:00PM EDT"}, {"Teams":"DAL vs AUS", "Scoreline":"17-24", "DT":"5/13 7:00PM CDT"}, {"Teams":"SEA vs SLC", "Scoreline":"21-23", "DT":"5/13 7:00PM MDT"}, {"Teams":"LA vs SAN", "Scoreline":"17-22", "DT":"5/14 1:00PM PDT"}, {"Teams":"TAM vs CAR", "Scoreline":"18-24", "DT":"5/14 6:00PM EDT"}, {"Teams":"MON vs DC", "Scoreline":"17-27", "DT":"5/14 7:00PM EDT"}, {"Teams":"NY vs BOS", "Scoreline":"23-19", "DT":"5/14 7:00PM EDT"}, {"Teams":"OTT vs TOR", "Scoreline":"26-29", "DT":"5/14 7:00PM EDT"}, {"Teams":"MAD vs IND", "Scoreline":"23-22", "DT":"5/14 7:30PM EDT"}, {"Teams":"MIN vs DAL", "Scoreline":"20-14", "DT":"5/14 7:00PM CDT"}]';
 const week4 = '[{"Teams":"AUS vs CAR", "Scoreline":"24-27", "DT":"5/20 7:00PM EDT"}, {"Teams":"PHI vs MON", "Scoreline":"19-13", "DT":"5/20 8:00PM EDT"}, {"Teams":"SEA vs SAN", "Scoreline":"20-22", "DT":"5/21 3:00PM PDT"}, {"Teams":"IND vs PIT", "Scoreline":"20-16", "DT":"5/21 6:00PM EDT"}, {"Teams":"TOR vs NY", "Scoreline":"17-31", "DT":"5/21 7:00PM EDT"}, {"Teams":"MAD vs DET", "Scoreline":"27-18", "DT":"5/21 7:00PM EDT"}, {"Teams":"PHI vs OTT", "Scoreline":"23-22", "DT":"5/21 7:00PM EDT"}, {"Teams":"AUS vs ATL", "Scoreline":"21-26", "DT":"5/21 7:30PM EDT"}, {"Teams":"POR vs OAK", "Scoreline":"26-22", "DT":"5/21 6:00PM PDT"}, {"Teams":"SEA vs LA", "Scoreline":"18-19", "DT":"5/22 1:00PM PDT"}]';
 const week5 = '[{"Teams":"NY vs MON", "Scoreline":"22-18", "DT":"5/27 7:00PM EDT"}, {"Teams":"IND vs DET", "Scoreline":"23-19", "DT":"5/28 7:00PM EDT"}, {"Teams":"PIT vs TAM", "Scoreline":"24-19", "DT":"5/28 7:00PM EDT"}, {"Teams":"NY vs OTT", "Scoreline":"30-18", "DT":"5/28 7:00PM EDT"}, {"Teams":"DC vs TOR", "Scoreline":"27-26", "DT":"5/28 7:00PM EDT"}, {"Teams":"POR vs SEA", "Scoreline":"18-26", "DT":"5/28 5:00PM PDT"}, {"Teams":"MIN vs MAD", "Scoreline":"19-16", "DT":"5/28 7:00PM CDT"}, {"Teams":"SLC vs COL", "Scoreline":"20-21", "DT":"5/28 7:00PM MDT"}]';
-const week6 = '[{"Teams":"MON vs OTT", "Scoreline":"24-21", "DT":"6/1 8:00PM EDT"}, {"Teams":"BOS vs DC", "Scoreline":"20-25", "DT":"6/3 7:00PM EDT"}, {"Teams":"MAD vs PIT", "Scoreline":"20-19", "DT":"6/3 7:00PM EDT"}, {"Teams":"CAR vs DAL", "Scoreline":"26-18", "DT":"6/3 7:00PM CDT"}, {"Teams":"OAK vs SLC", "Scoreline":"21-30", "DT":"6/3 7:00PM MDT"}, {"Teams":"ATL vs TAM", "Scoreline":"18/16", "DT":"6/4 6:00PM EDT"}, {"Teams":"BOS vs PHI", "Scoreline":"22-24", "DT":"6/4 6:00PM EDT"}, {"Teams":"CHI vs DET", "Scoreline":"28-20", "DT":"6/4 7:00PM EDT"}, {"Teams":"IND vs MIN", "Scoreline":"13-28", "DT":"6/4 6:00PM CDT"}, {"Teams":"NY vs TOR", "Scoreline":"25-8", "DT":"6/4 7:00PM EDT"}, {"Teams":"CAR vs AUS", "Scoreline":"20-21", "DT":"6/4 7:00PM CDT"}, {"Teams":"LA vs POR", "Scoreline":"21-20", "DT":"6/4 6:00PM PDT"}, {"Teams":"OAK vs COL", "Scoreline":"16-22", "DT":"6/4 7:00PM MDT"}, {"Teams":"LA vs SEA", "Scoreline":"14-23", "DT":"6/5 11:00AM PDT"}]';
+const week6 = '[{"Teams":"MON vs OTT", "Scoreline":"24-21", "DT":"6/1 8:00PM EDT"}, {"Teams":"BOS vs DC", "Scoreline":"20-25", "DT":"6/3 7:00PM EDT"}, {"Teams":"MAD vs PIT", "Scoreline":"20-19", "DT":"6/3 7:00PM EDT"}, {"Teams":"CAR vs DAL", "Scoreline":"26-18", "DT":"6/3 7:00PM CDT"}, {"Teams":"OAK vs SLC", "Scoreline":"21-30", "DT":"6/3 7:00PM MDT"}, {"Teams":"ATL vs TAM", "Scoreline":"18/16", "DT":"6/4 6:00PM EDT"}, {"Teams":"BOS vs PHI", "Scoreline":"22-24", "DT":"6w/4 6:00PM EDT"}, {"Teams":"CHI vs DET", "Scoreline":"28-20", "DT":"6/4 7:00PM EDT"}, {"Teams":"IND vs MIN", "Scoreline":"13-28", "DT":"6/4 6:00PM CDT"}, {"Teams":"NY vs TOR", "Scoreline":"25-8", "DT":"6/4 7:00PM EDT"}, {"Teams":"CAR vs AUS", "Scoreline":"20-21", "DT":"6/4 7:00PM CDT"}, {"Teams":"LA vs POR", "Scoreline":"21-20", "DT":"6/4 6:00PM PDT"}, {"Teams":"OAK vs COL", "Scoreline":"16-22", "DT":"6/4 7:00PM MDT"}, {"Teams":"LA vs SEA", "Scoreline":"14-23", "DT":"6/5 11:00AM PDT"}]';
 const week7 = '[{"Teams":"DC vs NY", "Scoreline":"21-26", "DT":"6/10 7:00PM EDT"}, {"Teams":"MAD vs CHI", "Scoreline":"21-22", "DT":"6/10 6:30PM CDT"}, {"Teams":"COL vs SLC", "Scoreline":"25-20", "DT":"6/10 7:00PM MDT"}, {"Teams":"POR vs LA", "Scoreline":"16-17", "DT":"6/10 7:30PM PDT"}, {"Teams":"TAM vs ATL", "Scoreline":"18-23", "DT":"6/11 3:00PM EDT"}, {"Teams":"DAL vs CAR", "Scoreline":"15-23", "DT":"6/11 6:00PM EDT"}, {"Teams":"TOR vs MON", "Scoreline":"21-20", "DT":"6/11 6:30PM EDT"}, {"Teams":"PIT vs MIN", "Scoreline":"14-20", "DT":"6/11 6:00PM CDT"}, {"Teams":"DET vs IND", "Scoreline":"18-32", "DT":"6/11 7:30PM EDT"}, {"Teams":"POR vs SAN", "Scoreline":"18-20", "DT":"6/11 5:00PM PDT"}, {"Teams":"COL vs OAK", "Scoreline":"29-24", "DT":"6/11 6:00PM PDT"}]';
-const week8 = '[{"Teams":"TOR vs PHI", "Scoreline":"14-16", "DT":"6/17 7:00PM EDT"}, {"Teams":"OTT vs BOS", "Scoreline":"18-19", "DT":"6/17 7:00PM EDT"}, {"Teams":"CAR vs ATL", "Scoreline":"22-18", "DT":"6/17 7:30PM EDT"}, {"Teams":"AUS vs CHI", "Scoreline":"21-24", "DT":"6/17 6:30PM CDT"}, {"Teams":"SEA vs OAK", "Scoreline":"19-20", "DT":"6/17 7:00PM PDT"}, {"Teams":"SEA vs COL", "Scoreline":"14-22", "DT":"6/18 4:00PM MDT"}, {"Teams":"DET vs PIT", "Scoreline":"21-24", "DT":6/18 6:00PM EDT""}, {"Teams":"OTT vs NY", "Scoreline":"16-21", "DT":"6/18 7:00PM EDT"}, {"Teams":"TOR vs DC", "Scoreline":"16-26", "DT":"6/18 7:00PM EDT"}, {"Teams":"AUS vs MAD", "Scoreline":"19-18", "DT":"6/18 6:00PM CDT"}, {"Teams":"SAN vs LA", "Scoreline":"20-19", "DT":"6/18 6:00PM PDT"}]';
+const week8 = '[{"Teams":"TOR vs PHI", "Scoreline":"14-16", "DT":"6/17 7:00PM EDT"}, {"Teams":"OTT vs BOS", "Scoreline":"18-19", "DT":"6/17 7:00PM EDT"}, {"Teams":"CAR vs ATL", "Scoreline":"22-18", "DT":"6/17 7:30PM EDT"}, {"Teams":"AUS vs CHI", "Scoreline":"21-24", "DT":"6/17 6:30PM CDT"}, {"Teams":"SEA vs OAK", "Scoreline":"19-20", "DT":"6/17 7:00PM PDT"}, {"Teams":"SEA vs COL", "Scoreline":"14-22", "DT":"6/18 4:00PM MDT"}, {"Teams":"DET vs PIT", "Scoreline":"21-24", "DT":"6/18 6:00PM EDT"}, {"Teams":"OTT vs NY", "Scoreline":"16-21", "DT":"6/18 7:00PM EDT"}, {"Teams":"TOR vs DC", "Scoreline":"16-26", "DT":"6/18 7:00PM EDT"}, {"Teams":"AUS vs MAD", "Scoreline":"19-18", "DT":"6/18 6:00PM CDT"}, {"Teams":"SAN vs LA", "Scoreline":"20-19", "DT":"6/18 6:00PM PDT"}]';
 const week9 = '[{"Teams":"SAN vs SLC", "Scoreline":"18-23", "DT":"6/24 7:00PM MDT"}, {"Teams":"CAR vs TAM", "Scoreline":"23-15", "DT":"6/25 6:00PM EDT"}, {"Teams":"MAD vs MIN", "Scoreline":"11-22", "DT":"6/25 6:00PM CDT"}, {"Teams":"BOS vs TOR", "Scoreline":"23-25", "DT":"6/25 7:00PM EDT"}, {"Teams":"CHI vs IND", "Scoreline":"24-23", "DT":"6/25 7:30PM EDT"}, {"Teams":"DAL vs AUS", "Scoreline":"20-26", "DT":"6/25 7:00PM CDT"}, {"Teams":"OAK vs SEA", "Scoreline":"22-17", "DT":"6/25 5:00PM PDT"}, {"Teams":"SAN vs COL", "Scoreline":"21-27", "DT":"6/25 7:00PM MDT"}, {"Teams":"OAK vs POR", "Scoreline":"36-21", "DT":"6/26 4:00PM PDT"}]';
 const week10 = '[{"Teams":"MON vs NY", "Scoreline":"14-29", "DT":"7/1 7:00PM EDT"}, {"Teams":"MIN vs CHI", "Scoreline":"25-22", "DT":"7/1 6:30PM CDT"}, {"Teams":"MIN vs DET", "Scoreline":"33-19", "DT":"7/2 3:30PM EDT"}, {"Teams":"DC vs PHI", "Scoreline":"22-21", "DT":"7/2 6:00PM EDT"}, {"Teams":"ATL vs CAR", "Scoreline":"16-18", "DT":"7/2 7:00PM EDT"}, {"Teams":"TOR vs OTT", "Scoreline":"21-20", "DT":"7/2 7:00PM EDT"}, {"Teams":"MON vs BOS", "Scoreline":"16-23", "DT":"7/2 7:00PM EDT"}, {"Teams":"PIT vs IND", "Scoreline":"26-28", "DT":"7/2 7:30PM EDT"}, {"Teams":"AUS vs DAL", "Scoreline":"26-16", "DT":"7/2 7:00PM CDT"}, {"Teams":"LA vs COL", "Scoreline":"15-24", "DT":"7/2 7:00PM MDT"}]';
 const week11 = '[{"Teams":"OTT vs MON", "Scoreline":"23-20", "DT":"7/7 7:00PM EDT"}, {"Teams":"PHI vs DC", "Scoreline":"24-25", "DT":"7/8 7:00PM EDT"}, {"Teams":"ATL vs DAL", "Scoreline":"17-14", "DT":"7/8 7:00PM CDT"}, {"Teams":"SLC vs SEA", "Scoreline":"25-24", "DT":"7/8 7:00PM PDT"}, {"Teams":"TAM vs CAR", "Scoreline":"11-20", "DT":"7/9 6:00PM EDT"}, {"Teams":"DET vs PIT", "Scoreline":"19-22", "DT":"7/9 6:00PM EDT"}, {"Teams":"BOS vs NY", "Scoreline":"18-32", "DT":"7/9 7:00PM EDT"}, {"Teams":"IND vs CHI", "Scoreline":"15-23", "DT":"7/9 6:00PM CDT"}, {"Teams":"ATL vs AUS", "Scoreline":"17-18", "DT":"7/9 7:00PM CDT"}, {"Teams":"SLC vs POR", "Scoreline":"28-14", "DT":"7/9 6:30PM PDT"}, {"Teams":"MIN vs MAD", "Scoreline":"18-21", "DT":"7/10 5:00PM CDT"}]';
-const week12 = '[{"Teams":"DC vs MON", "Scoreline":"24-14", "DT":"7/15 7:00PM EDT"}, {"Teams":"IND vs MAD", "Scoreline":"19/17", "DT":"7/15 7:00PM CDT"}, {"Teams":"COL vs SAN", "Scoreline":"20-23", "DT":"7/15 7:00PM PDT"}, {"Teams":"ATL vs TAM", "Scoreline":""26-17, "DT":"7/16 6:00PM EDT"}, {"Teams":"CAR vs PIT", "Scoreline":"27-22", "DT":"7/16 6:00PM EDT"}, {"Teams":"MAD vs DET", "Scoreline":"25-18", "DT":"7/16 7:00PM EDT"}, {"Teams":"DC vs OTT", "Scoreline":"24-17", "DT":"7/16 7:00PM EDT"}, {"Teams":"CHI vs MIN", "Scoreline":"27-25", "DT":"7/16 6:00PM CDT"}, {"Teams":"PHI vs TOR", "Scoreline":"25-23", "DT":"7/16 7:00PM EDT"}, {"Teams":"DAL vs AUS", "Scoreline":"22-26", "DT":"7/16 7:00PM CDT"}, {"Teams":"SLC vs OAK", "Scoreline":"22-19", "DT":"7/16 5:00PM PDT"}, {"Teams":"COL vs LA", "Scoreline":"27-21", "DT":"7/16 6:00PM PDT"}]';
+const week12 = '[{"Teams":"DC vs MON", "Scoreline":"24-14", "DT":"7/15 7:00PM EDT"}, {"Teams":"IND vs MAD", "Scoreline":"19/17", "DT":"7/15 7:00PM CDT"}, {"Teams":"COL vs SAN", "Scoreline":"20-23", "DT":"7/15 7:00PM PDT"}, {"Teams":"ATL vs TAM", "Scoreline":"26-17", "DT":"7/16 6:00PM EDT"}, {"Teams":"CAR vs PIT", "Scoreline":"27-22", "DT":"7/16 6:00PM EDT"}, {"Teams":"MAD vs DET", "Scoreline":"25-18", "DT":"7/16 7:00PM EDT"}, {"Teams":"DC vs OTT", "Scoreline":"24-17", "DT":"7/16 7:00PM EDT"}, {"Teams":"CHI vs MIN", "Scoreline":"27-25", "DT":"7/16 6:00PM CDT"}, {"Teams":"PHI vs TOR", "Scoreline":"25-23", "DT":"7/16 7:00PM EDT"}, {"Teams":"DAL vs AUS", "Scoreline":"22-26", "DT":"7/16 7:00PM CDT"}, {"Teams":"SLC vs OAK", "Scoreline":"22-19", "DT":"7/16 5:00PM PDT"}, {"Teams":"COL vs LA", "Scoreline":"27-21", "DT":"7/16 6:00PM PDT"}]';
 const week13 = '[{"Teams":"NY vs PHI", "Scoreline":"24-19", "DT":"7/22 7:00PM EDT"}, {"Teams":"DAL vs ATL", "Scoreline":"20-27", "DT":"7/22 7:30PM EDT"}, {"Teams":"LA vs SLC", "Scoreline":"16-19", "DT":"7/22 7:00PM MDT"}, {"Teams":"DC vs BOS", "Scoreline":"23-21", "DT":"7/23 1:00PM EDT"}, {"Teams":"MIN vs IND", "Scoreline":"24-21", "DT":"7/23 2:00PM CDT"}, {"Teams":"DAL vs TAM", "Scoreline":"15-17", "DT":"7/23 6:00PM EDT"}, {"Teams":"CHI vs PIT", "Scoreline":"25-17", "DT":"7/23 6:00PM EDT"}, {"Teams":"SAN vs SEA", "Scoreline":"22-18", "DT":"7/23 5:00PM PDT"}, {"Teams":"LA vs OAK", "Scoreline":"18-22", "DT":"7/23 5:00PM PDT"}, {"Teams":"SAN VS POR", "Scoreline":"23-18", "DT":"7/24 4:15PM PDT"}]';
 const week14 = '[{"Teams":"OTT vs DC", "Scoreline":"17-24", "DT":"7/29 7:00PM EDT"}, {"Teams":"TAM vs AUS", "Scoreline":"10-30", "DT":"7/29 7:00PM CDT"}, {"Teams":"CHI vs MAD", "Scoreline":"21-15", "DT":"7/29 7:00PM CDT"}, {"Teams":"POR vs SLC", "Scoreline":"16-32", "DT":"7/29 7:00PM MDT"}, {"Teams":"OAK vs LA", "Scoreline":"24-25", "DT":"7/29 7:30PM PDT"}, {"Teams":"OTT vs PHI", "Scoreline":"19-25", "DT":"7/30 6:00PM EDT"}, {"Teams":"DET vs CHI", "Scoreline":"18-33", "DT":"7/30 6:00PM PDT"}, {"Teams":"IND vs ATL", "Scoreline":"21-23", "DT":"7/30 7:30PM EDT"}, {"Teams":"TAM vs DAL", "Scoreline":"16-24", "DT":"7/30 7:00PM EDT"}, {"Teams":"POR vs COL", "Scoreline":"18-34", "DT":"7/30 7:00PM MDT"}, {"Teams":"OAK vs SAN", "Scoreline":"18-24", "DT":"7/30 6:00PM PDT"}, {"Teams":"DET vs MIN", "Scoreline":"9-26", "DT":"7/31 5:00PM CDT"}]';
 const playoffs = '[{"Teams":"PHI vs DC", "Scoreline":"18-23", "DT":"8/13 7:00PM EDT"}, {"Teams":"IND vs MIN", "Scoreline":"18-20", "DT":"8/13 6:00PM CDT"}, {"Teams":"SAN vs SLC", "Scoreline":"16-19", "DT":"8/13 7:00PM MDT"}, {"Teams":"AUS vs CAR", "Scoreline":"20-22", "DT":"8/20 6:30PM EDT"}, {"Teams":"DC vs NY", "Scoreline":"18-19", "DT":"8/20 7:00PM EDT"}, {"Teams":"SLC vs COL", "Scoreline":"21-26", "DT":"8/20 6:30PM MDT"}, {"Teams":"MIN vs CHI", "Scoreline":"16-21", "DT":"8/21 4:00PM CDT"}]';
@@ -30,22 +30,22 @@ let westDiv = JSON.parse(teamsWest);
 let southDiv = JSON.parse(teamsSouth);
 
 let week1Parsed = JSON.parse(week1);
-let week2Parsed = JSON.parse(week1);
-let week3Parsed = JSON.parse(week1);
-let week4Parsed = JSON.parse(week1);
-let week5Parsed = JSON.parse(week1);
-let week6Parsed = JSON.parse(week1);
-let week7Parsed = JSON.parse(week1);
-let week8Parsed = JSON.parse(week1);
-let week9Parsed = JSON.parse(week1);
-let week10Parsed = JSON.parse(week1);
-let week11Parsed = JSON.parse(week1);
-let week12Parsed = JSON.parse(week1);
-let week13Parsed = JSON.parse(week1);
-let week14Parsed = JSON.parse(week1);
-let playoffsParsed = JSON.parse(week1);
-let champsParsed = JSON.parse(week1);
-let allstarsParsed = JSON.parse(week1);
+let week2Parsed = JSON.parse(week2);
+let week3Parsed = JSON.parse(week3);
+let week4Parsed = JSON.parse(week4);
+let week5Parsed = JSON.parse(week5);
+let week6Parsed = JSON.parse(week6);
+let week7Parsed = JSON.parse(week7);
+let week8Parsed = JSON.parse(week8);
+let week9Parsed = JSON.parse(week9);
+let week10Parsed = JSON.parse(week10);
+let week11Parsed = JSON.parse(week11);
+let week12Parsed = JSON.parse(week12);
+let week13Parsed = JSON.parse(week13);
+let week14Parsed = JSON.parse(week14);
+let playoffsParsed = JSON.parse(playoffs);
+let champsParsed = JSON.parse(championships);
+let allstarsParsed = JSON.parse(allstars);
 
 //Table Bodies
 
@@ -81,14 +81,17 @@ let sortedN = false;
 let sortedW = false;
 let sortedL = false;
 let sortedPM = false;
+let isCardOne = true;
+let currentPage;
 
 //Pagination elements
+const paginationLinks = document.querySelectorAll('.pagination-link');
 const paginationNums = document.querySelector('.pagination-list');
 const paginatedContent = document.querySelector('.pagination-container');
 const contentItems = paginatedContent.querySelectorAll('li');
 const nextButton = document.querySelector('.pagination-next');
 const prevButton = document.querySelector('.pagination-previous');
-/*const IDweek1 = document.getElementById('week1');
+const IDweek1 = document.getElementById('week1');
 const IDweek2 = document.getElementById('week2');
 const IDweek3 = document.getElementById('week3');
 const IDweek4 = document.getElementById('week4');
@@ -104,8 +107,7 @@ const IDweek13 = document.getElementById('week13');
 const IDweek14 = document.getElementById('week14');
 const IDplayoffs = document.getElementById('playoffs');
 const IDchamps = document.getElementById('champs');
-const IDallstars = document.getElementById('allstars'); */
-const paginationLinks = document.querySelectorAll('.pagination-link');
+const IDallstars = document.getElementById('allstars'); 
 
 //test
 /*console.log(teamsEast);
@@ -113,39 +115,151 @@ console.log(teamsCentral);
 console.log(teamsWest);
 console.log(teamsSouth);*/
 
-buildGameCard(week1Parsed);
-
 //Functions
-function buildSchedule(week) {
+function truncatePages(currentPage) {
+
+}
+
+function findRequestedPage(int) {
+    if(int === 1) {
+        return week1Parsed;
+    }else if(int === 2) {
+        return week2Parsed;
+    }else if(int === 3) {
+        return week3Parsed;
+    }else if(int === 4) {
+        return week4Parsed;
+    }else if(int === 5) {
+        return week5Parsed;
+    }else if(int === 6) {
+        return week6Parsed;
+    }else if(int === 7) {
+        return week7Parsed;
+    }else if(int === 8) {
+        return week8Parsed;
+    }else if(int === 9) {
+        return week9Parsed;
+    }else if(int === 10) {
+        return week10Parsed;
+    }else if(int === 11) {
+        return week11Parsed;
+    }else if(int === 12) {
+        return week12Parsed;
+    }else if(int === 13) {
+        return week13Parsed;
+    }else {
+        return week14Parsed;
+    }
+}
+
+function prevButtonClicked() {
+    let prevPageNum;
+    let prevParsedNum;
+
+    if(prevButton.hasAttribute('disabled')) {
+        //*Do nothing when then button is disabled (when week1 is active)
+    }else {
+        if(currentPage === 'playoffs') {
+            paginate('week14', week14Parsed);
+            currentPage = 'week14';
+        }else if(currentPage === 'champs') {
+            paginate('playoffs', playoffsParsed);
+            currentPage = 'playoffs';
+        }else if(currentPage === 'allstars') {
+            paginate('champs', champsParsed);
+            currentPage = 'champs';
+        }else {
+            if(currentPage.length === 5) {
+                prevPageNum = currentPage.substring(currentPage.length - 1);
+            }else {
+                prevPageNum = currentPage.substring(currentPage.length - 2);
+            } 
     
+            prevParsedNum = parseInt(prevPageNum);
+            prevParsedNum -= 1;
+            paginate('week' + prevParsedNum, findRequestedPage(prevParsedNum));
+            currentPage = 'week' + prevParsedNum;
+        }
+    }
+}
+
+function nextButtonClicked() {
+    let nextPageNum;
+    let nextParsedNum;
+
+    if(nextButton.hasAttribute('disabled')) {
+        //*Do nothing (just like the prevButton function)
+    }else {
+        if(currentPage === 'week14') {
+            paginate('playoffs', playoffsParsed);
+            currentPage = 'playoffs';
+        }else if(currentPage === 'playoffs') {
+            paginate('champs', champsParsed);
+            currentPage = 'champs';
+        }else if(currentPage === 'champs') {
+            paginate('allstars', allstarsParsed);
+            currentPage = 'allstars';
+        }else {
+            if(currentPage.length === 5) {
+                nextPageNum = currentPage.substring(currentPage.length - 1);
+            }else {
+                nextPageNum = currentPage.substring(currentPage.length - 2);
+            }
+    
+            nextParsedNum = parseInt(nextPageNum);
+            nextParsedNum += 1;
+            paginate('week' + nextParsedNum, findRequestedPage(nextParsedNum));
+            currentPage = 'week' + nextParsedNum;
+        }
+    }
+}
+
+function getCurrentPage() {
+    return currentPage;
 }
 
 
 function buildGameCard(games) {
+    isCardOne = true;
+
     let cardOne = document.getElementById('half-one');
     let cardTwo = document.getElementById('half-two');
-    let isCardOne = true;
-    let card = document.createElement('div');
-    let cardContent = document.createElement('div');
-    let content = document.createElement('div');
-    let pp = document.createElement('p');
 
-    card.classList.add('card');
-    cardContent.classList.add('card-content');
-    content.classList.add('content');
+    cardOne.replaceChildren();
+    cardTwo.replaceChildren();
 
     games.forEach((game) => {
+        let team1 = game.Teams.substring(0, game.Teams.indexOf(' vs'));
+        let team2 = game.Teams.substring(game.Teams.indexOf('s') + 2);
+        let card = document.createElement('div');
+        let cardContent = document.createElement('div');
+        let content = document.createElement('div');
+        let para = document.createElement('p');
+
+        card.classList.add('card');
+        cardContent.classList.add('card-content');
+        content.classList.add('content');
+
+        para.textContent = game.Teams;
+        content.appendChild(para);
+        para.setAttribute('class', 'title is-size-3 teams');
+        para = document.createElement('p');
+        para.textContent = '(' + team1 + ') ' + game.Scoreline + ' (' + team2 + ')'; //Format should look like (team1) 00-00 (team2)
+        content.appendChild(para);
+        para.setAttribute('class', 'is-size-4 scoreline');
+        para = document.createElement('p');
+        para.textContent = game.DT;
+        content.appendChild(para);
+        para.setAttribute('class', 'is-size-5 game-dt');
+        cardContent.appendChild(content);
+        card.appendChild(cardContent);
+        card.setAttribute('class', 'card game-card mb-5'); //Adding margin via Bulma
+
         if(isCardOne) {
-            cardOne.appendChild(card);
-            card.appendChild(cardContent);
-            cardContent.appendChild(content);
-    
+            cardOne.appendChild(card);  
             isCardOne = false;
         }else {
             cardTwo.appendChild(card);
-            card.appendChild(cardContent);
-            cardContent.appendChild(content);
-    
             isCardOne = true;
         }
     });
@@ -171,7 +285,7 @@ function buildGameCard(games) {
     return team1 + "-" + score1 + "-" + team2 + "-" + score2;
 } */
 
-function paginate(week) {
+function paginate(week, arr) {
     let active = document.getElementById(week);
 
     paginationLinks.forEach((element) => {
@@ -190,6 +304,9 @@ function paginate(week) {
         prevButton.removeAttribute("disabled");
         nextButton.removeAttribute("disabled");
     }
+
+    currentPage = week;
+    buildGameCard(arr);
 }
 
 function scheduleOnload() {
@@ -197,6 +314,8 @@ function scheduleOnload() {
     buildMiniTable(centralDiv, miniCentralBody2);
     buildMiniTable(westDiv, miniWestBody2);
     buildMiniTable(southDiv, miniSouthBody2);
+
+    paginate('week1', week1Parsed);
 }
 
 function standingsOnload() {

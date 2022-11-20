@@ -97,11 +97,31 @@
     color: white;
 }
 
+.pagination-hidden {
+    display: none;
+}
+
 /* GAME CARDS */
+.game-card {
+    max-width: 400px;
+}
+
 .scoreline {
     text-align: center;
 }
 
 .game-dt {
     text-align: center;
+}
+
+.teams {
+    text-align: center;
+}
+
+#half-two {
+    margin-left: 100px;
+}
+
+#half-one {
+    margin-left: 125px;
 }
