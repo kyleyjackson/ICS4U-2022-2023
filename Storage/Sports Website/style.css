@@ -4,6 +4,10 @@
     font-weight: bold;
 }
 
+.admin-hidden {
+    display: none;
+}
+
 /* MAIN STANDINGS */
 #east-column .card-header {
     border-bottom: darkgreen 3px solid;
@@ -124,4 +128,40 @@
 
 #half-one {
     margin-left: 125px;
+}
+
+/* Login area */
+.login-hidden {
+    display: none;
+}
+
+#login-menu {
+    position: absolute;
+    margin-top: 38px;
+    width: 300px;
+    height: 200px;
+    border: hsl(0, 0, 21%) 1px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#login-container {
+    display: flex;
+    justify-content: right;
+}
+
+#password {
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    width: 225px;
+    height: 50px;
+}
+
+#password-header {
+    display: block;
+    text-align: center;
+    margin-top: 15%;
+    color: white;
 }

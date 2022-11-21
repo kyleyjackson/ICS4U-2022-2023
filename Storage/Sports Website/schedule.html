@@ -19,11 +19,16 @@
             <div class="navbar-start">
                 <a class="navbar-item" href="standings.html">Standings</a>
                 <a class="navbar-item current-page" href="schedule.html">Schedule</a>
+                <a class="navbar-item admin-hidden" href="admin.html" id="admin">Admin</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div>
-                        <a class="button is-dark" href="login.html">Log in</a>
+                    <div id="login-container">
+                        <a class="button is-dark" id="login" onclick="login();">Log in</a>
+                        <div id="login-menu" class="has-background-dark login-hidden is-active">
+                            <p id="password-header" class="title">Enter Password</p>
+                            <input type="text" id="password">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,11 +91,11 @@
                 </div>
             </div>
         </div>
-        <div class="column is-9">
+        <div class="column is-8">
             <nav class="pagination is-centered is-large" role="navigation" aria-label="pagination">
                 <a class="pagination-previous px-5" onclick="prevButtonClicked();">Previous</a>
                 <a class="pagination-next px-5" onclick="nextButtonClicked();">Next</a>
-                <ul class="pagination-list"> <!-- PAgination Buttons-->
+                <ul class="pagination-list"> <!-- Pagination Buttons-->
                     <li><a class="pagination-link" onclick="paginate('week1', week1Parsed);" id="week1">1</a></li>
                     <li><a class="pagination-link" onclick="paginate('week2', week2Parsed);" id="week2">2</a></li>
                     <li><a class="pagination-link" onclick="paginate('week3', week3Parsed);" id="week3">3</a></li>

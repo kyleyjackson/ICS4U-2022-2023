@@ -21,14 +21,17 @@ const week13 = '[{"Teams":"NY vs PHI", "Scoreline":"24-19", "DT":"7/22 7:00PM ED
 const week14 = '[{"Teams":"OTT vs DC", "Scoreline":"17-24", "DT":"7/29 7:00PM EDT"}, {"Teams":"TAM vs AUS", "Scoreline":"10-30", "DT":"7/29 7:00PM CDT"}, {"Teams":"CHI vs MAD", "Scoreline":"21-15", "DT":"7/29 7:00PM CDT"}, {"Teams":"POR vs SLC", "Scoreline":"16-32", "DT":"7/29 7:00PM MDT"}, {"Teams":"OAK vs LA", "Scoreline":"24-25", "DT":"7/29 7:30PM PDT"}, {"Teams":"OTT vs PHI", "Scoreline":"19-25", "DT":"7/30 6:00PM EDT"}, {"Teams":"DET vs CHI", "Scoreline":"18-33", "DT":"7/30 6:00PM PDT"}, {"Teams":"IND vs ATL", "Scoreline":"21-23", "DT":"7/30 7:30PM EDT"}, {"Teams":"TAM vs DAL", "Scoreline":"16-24", "DT":"7/30 7:00PM EDT"}, {"Teams":"POR vs COL", "Scoreline":"18-34", "DT":"7/30 7:00PM MDT"}, {"Teams":"OAK vs SAN", "Scoreline":"18-24", "DT":"7/30 6:00PM PDT"}, {"Teams":"DET vs MIN", "Scoreline":"9-26", "DT":"7/31 5:00PM CDT"}]';
 const playoffs = '[{"Teams":"PHI vs DC", "Scoreline":"18-23", "DT":"8/13 7:00PM EDT"}, {"Teams":"IND vs MIN", "Scoreline":"18-20", "DT":"8/13 6:00PM CDT"}, {"Teams":"SAN vs SLC", "Scoreline":"16-19", "DT":"8/13 7:00PM MDT"}, {"Teams":"AUS vs CAR", "Scoreline":"20-22", "DT":"8/20 6:30PM EDT"}, {"Teams":"DC vs NY", "Scoreline":"18-19", "DT":"8/20 7:00PM EDT"}, {"Teams":"SLC vs COL", "Scoreline":"21-26", "DT":"8/20 6:30PM MDT"}, {"Teams":"MIN vs CHI", "Scoreline":"16-21", "DT":"8/21 4:00PM CDT"}]';
 const championships = '[{"Teams":"CHI vs COL", "Scoreline":"19-14", "DT":"8/26 5:00PM CDT"}, {"Teams":"CAR vs NY", "Scoreline":"16-22", "DT":"8/26 7:30PM CDT"}, {"Teams":"CHI vs NY", "Scoreline":"14-22", "DT":"8/27 7:00PM CDT"}]';
-const allstars = '[{"Teams":"EAST/CENTRAL vs SOUTH/WEST", "Scoreline":"42-24", "DT":"11/12 4:00PM PDT"}]';
+const allstars = '[{"Teams":"E/C vs W/S", "Scoreline":"42-24", "DT":"11/12 4:00PM PDT"}]';
 
 //Parsed arrays
+
+//Teams
 let eastDiv = JSON.parse(teamsEast);
 let centralDiv = JSON.parse(teamsCentral);
 let westDiv = JSON.parse(teamsWest);
 let southDiv = JSON.parse(teamsSouth);
 
+//Games
 let week1Parsed = JSON.parse(week1);
 let week2Parsed = JSON.parse(week2);
 let week3Parsed = JSON.parse(week3);
@@ -83,12 +86,12 @@ let sortedL = false;
 let sortedPM = false;
 let isCardOne = true;
 let currentPage;
+let currentPageNum;
+let loggedIn = window.localStorage.getItem('isLoggedIn');
+const password = 'password';
 
 //Pagination elements
 const paginationLinks = document.querySelectorAll('.pagination-link');
-const paginationNums = document.querySelector('.pagination-list');
-const paginatedContent = document.querySelector('.pagination-container');
-const contentItems = paginatedContent.querySelectorAll('li');
 const nextButton = document.querySelector('.pagination-next');
 const prevButton = document.querySelector('.pagination-previous');
 const IDweek1 = document.getElementById('week1');
@@ -109,15 +112,56 @@ const IDplayoffs = document.getElementById('playoffs');
 const IDchamps = document.getElementById('champs');
 const IDallstars = document.getElementById('allstars'); 
 
-//test
-/*console.log(teamsEast);
-console.log(teamsCentral);
-console.log(teamsWest);
-console.log(teamsSouth);*/
+//Login area
+const loginButton = document.getElementById('login');
+const loginMenu = document.getElementById('login-menu');    
+const input = document.getElementById('password');
 
 //Functions
-function truncatePages(currentPage) {
+function checkIfLoggedIn() {
+    if(window.localStorage.getItem('isLoggedIn') === true) {
+        loginButton.textContent = "Log out";
+        loginMenu.classList.add('login-hidden');
+        window.localStorage.setItem('isLoggedIn', true);
+    }
+}
 
+function login() {
+    if(loginButton.textContent === 'Log in') {
+        if(loginMenu.classList.contains('login-hidden')) {
+            loginMenu.classList.remove('login-hidden');
+
+            input.addEventListener('keyup', (event) => { //Happens when the enter key is released (keyup)
+                if(event.keyCode === 13) { //13 is the keyCode for the 'Enter' key
+                    if(input.value === 'Password') { //Checks the textarea to see if the it is the same as the correct password
+                        console.log('enter!');
+                        loginButton.textContent = "Log out";
+                        loginMenu.classList.add('login-hidden');
+                        window.localStorage.setItem('isLoggedIn', true);
+                    }else {
+                        alert('Incorrect password, the password is Password');
+                        loginMenu.classList.add('login-hidden');
+                    }
+                }
+            });
+        }else    
+            loginMenu.classList.add('login-hidden');
+    }else {
+        loginButton.textContent = "Log in";
+        window.localStorage.removeItem('isLoggedIn');
+        window.localStorage.setItem('isLoggedIn', false);
+    }
+    input.value = ''; 
+}
+
+function truncatePages(currPage) { //Displays a certain amount of buttons in order to maintain a cleaner look
+    let active; 
+
+    if(!isNaN(currPage.substring(currPage.indexOf('k') + 1))) //use isNaN() to check if the specified value resembles a number
+        active = currPage.substring(currPage.indexOf('k') + 1);
+    else 
+        active = currPage;
+    return active;
 }
 
 function findRequestedPage(int) {
@@ -162,12 +206,15 @@ function prevButtonClicked() {
         if(currentPage === 'playoffs') {
             paginate('week14', week14Parsed);
             currentPage = 'week14';
+            currentPageNum = 14;
         }else if(currentPage === 'champs') {
             paginate('playoffs', playoffsParsed);
             currentPage = 'playoffs';
+            currentPageNum = 15;
         }else if(currentPage === 'allstars') {
             paginate('champs', champsParsed);
             currentPage = 'champs';
+            currentPageNum = 16;
         }else {
             if(currentPage.length === 5) {
                 prevPageNum = currentPage.substring(currentPage.length - 1);
@@ -179,6 +226,7 @@ function prevButtonClicked() {
             prevParsedNum -= 1;
             paginate('week' + prevParsedNum, findRequestedPage(prevParsedNum));
             currentPage = 'week' + prevParsedNum;
+            currentPageNum = prevParsedNum;
         }
     }
 }
@@ -193,12 +241,15 @@ function nextButtonClicked() {
         if(currentPage === 'week14') {
             paginate('playoffs', playoffsParsed);
             currentPage = 'playoffs';
+            currentPageNum = 15;
         }else if(currentPage === 'playoffs') {
             paginate('champs', champsParsed);
             currentPage = 'champs';
+            currentPageNum = 16;
         }else if(currentPage === 'champs') {
             paginate('allstars', allstarsParsed);
             currentPage = 'allstars';
+            currentPageNum = 17;
         }else {
             if(currentPage.length === 5) {
                 nextPageNum = currentPage.substring(currentPage.length - 1);
@@ -210,6 +261,7 @@ function nextButtonClicked() {
             nextParsedNum += 1;
             paginate('week' + nextParsedNum, findRequestedPage(nextParsedNum));
             currentPage = 'week' + nextParsedNum;
+            currentPageNum = nextParsedNum;
         }
     }
 }
@@ -305,8 +357,22 @@ function paginate(week, arr) {
         nextButton.removeAttribute("disabled");
     }
 
+    if(week === 'playoffs') {
+        currentPageNum = 15;
+    }else if(week === 'champs') {
+        currentPageNum = 16;
+    }else if(week === 'allstars') {
+        currentPageNum = 17;
+    }else {
+        currentPageNum = parseInt(week.substring(week.indexOf('k') + 1));
+    }
+
     currentPage = week;
     buildGameCard(arr);
+}
+
+function adminOnload() {
+
 }
 
 function scheduleOnload() {
@@ -316,6 +382,8 @@ function scheduleOnload() {
     buildMiniTable(southDiv, miniSouthBody2);
 
     paginate('week1', week1Parsed);
+
+    checkIfLoggedIn();
 }
 
 function standingsOnload() {
@@ -328,6 +396,8 @@ function standingsOnload() {
     buildMiniTable(centralDiv, miniCentralBody);
     buildMiniTable(westDiv, miniWestBody);
     buildMiniTable(southDiv, miniSouthBody);
+
+    checkIfLoggedIn();
 }
 
 function setAscending(exp) {
