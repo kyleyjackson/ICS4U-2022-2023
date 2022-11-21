@@ -112,18 +112,21 @@ const IDplayoffs = document.getElementById('playoffs');
 const IDchamps = document.getElementById('champs');
 const IDallstars = document.getElementById('allstars'); 
 
-//Login area
+//Login funcitonality
 const loginButton = document.getElementById('login');
 const loginMenu = document.getElementById('login-menu');    
 const input = document.getElementById('password');
+const admin = document.getElementById('admin');
 
 //Functions
 function checkIfLoggedIn() {
-    if(window.localStorage.getItem('isLoggedIn') === true) {
+    if(loggedIn === true) {
         loginButton.textContent = "Log out";
         loginMenu.classList.add('login-hidden');
         window.localStorage.setItem('isLoggedIn', true);
     }
+
+    console.log(loggedIn);
 }
 
 function login() {
@@ -137,6 +140,7 @@ function login() {
                         console.log('enter!');
                         loginButton.textContent = "Log out";
                         loginMenu.classList.add('login-hidden');
+                        admin.classList.remove('admin-hidden');
                         window.localStorage.setItem('isLoggedIn', true);
                     }else {
                         alert('Incorrect password, the password is Password');
@@ -148,6 +152,7 @@ function login() {
             loginMenu.classList.add('login-hidden');
     }else {
         loginButton.textContent = "Log in";
+        admin.classList.add('admin-hidden');
         window.localStorage.removeItem('isLoggedIn');
         window.localStorage.setItem('isLoggedIn', false);
     }
@@ -396,8 +401,6 @@ function standingsOnload() {
     buildMiniTable(centralDiv, miniCentralBody);
     buildMiniTable(westDiv, miniWestBody);
     buildMiniTable(southDiv, miniSouthBody);
-
-    checkIfLoggedIn();
 }
 
 function setAscending(exp) {
