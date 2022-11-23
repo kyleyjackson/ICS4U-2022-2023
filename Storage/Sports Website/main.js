@@ -119,11 +119,63 @@ const input = document.getElementById('password');
 const admin = document.getElementById('admin');
 
 //Game Creator
-
+const firstDropdownTxt = document.getElementById('drop1-text');
+const secondDropdownTxt = document.getElementById('drop2-text');
+const scoreInput = document.getElementById('scoreline-input');
 
 //Functions
-function createGame() {
+function createNewCard() {
 
+}
+
+function createGame() {
+    let teams;
+    let scoreline;
+    let dt;
+
+    if(validateTeam() === 1) { //validate teams
+        teams = firstDropdownTxt.textContent + '-' + secondDropdownTxt.textContent;
+    }else {
+        
+    }
+    
+    if() { //validate scoreline
+
+    }else {
+
+    }
+
+    if() { //validate date + time
+
+    }else {
+
+    }
+}
+
+function validateDateTime(inpit) {
+    if(input.match)
+}
+
+function validateScore(input) {
+    if(input.match("^\d{2}\-\d{2}$") === true) { //Pattern match: "^" match the front, \d an integer from 0-9, {2} match the previous parameter twice, \- match - literally, $ match the end
+        return 1;
+    }else if(input.match("^\d\-\d{2}$") === true) {
+        return 1;
+    }else if(input.match("^\d{2}\-\d$") === true) {
+        return 1;
+    }else if(input.match("^\d\-\d$") === true) {
+        return 1;
+    }
+
+    return -1;
+}
+
+function validateTeam(input) {
+
+}
+
+function assignTeam(team, button) {
+    button.textContent = team;
 }
 
 function checkIfLoggedIn() {
