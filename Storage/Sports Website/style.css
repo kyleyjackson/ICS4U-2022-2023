@@ -4,6 +4,11 @@
     font-weight: bold;
 }
 
+.current-page:hover {
+    background-color: hsl(0, 0%, 96%);
+    font-weight: bold;
+}
+
 .admin-hidden {
     display: none;
 }
@@ -166,4 +171,19 @@
     text-align: center;
     margin-top: 15%;
     color: white;
+}
+
+/* Game Creator */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'team1' 'team2';
+}
+
+#team1-dropdown {
+    grid-area: team1;
+}
+
+#team2-dropdown {
+    grid-area: team2;
 }

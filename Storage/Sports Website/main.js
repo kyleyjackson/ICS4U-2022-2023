@@ -87,7 +87,7 @@ let sortedPM = false;
 let isCardOne = true;
 let currentPage;
 let currentPageNum;
-let loggedIn = window.localStorage.getItem('isLoggedIn');
+let loggedIn = sessionStorage.getItem('isLoggedIn');
 const password = 'password';
 
 //Pagination elements
@@ -120,10 +120,12 @@ const admin = document.getElementById('admin');
 
 //Functions
 function checkIfLoggedIn() {
+    loggedIn = sessionStorage.getItem('loggedIn');
     if(loggedIn === true) {
         loginButton.textContent = "Log out";
         loginMenu.classList.add('login-hidden');
-        window.localStorage.setItem('isLoggedIn', true);
+    }else {
+        sessionStorage.setItem('isLoggedIn', false);
     }
 
     console.log(loggedIn);
@@ -141,7 +143,7 @@ function login() {
                         loginButton.textContent = "Log out";
                         loginMenu.classList.add('login-hidden');
                         admin.classList.remove('admin-hidden');
-                        window.localStorage.setItem('isLoggedIn', true);
+                        sessionStorage.setItem('isLoggedIn', true);
                     }else {
                         alert('Incorrect password, the password is Password');
                         loginMenu.classList.add('login-hidden');
@@ -153,8 +155,8 @@ function login() {
     }else {
         loginButton.textContent = "Log in";
         admin.classList.add('admin-hidden');
-        window.localStorage.removeItem('isLoggedIn');
-        window.localStorage.setItem('isLoggedIn', false);
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.setItem('isLoggedIn', false);
     }
     input.value = ''; 
 }
@@ -401,6 +403,8 @@ function standingsOnload() {
     buildMiniTable(centralDiv, miniCentralBody);
     buildMiniTable(westDiv, miniWestBody);
     buildMiniTable(southDiv, miniSouthBody);
+
+    checkIfLoggedIn();
 }
 
 function setAscending(exp) {
