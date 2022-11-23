@@ -81,10 +81,6 @@
     color: white;
 }
 
-.dropdown-trigger button {
-    width: 195px;
-}
-
 #up-down-menu .is-active {
     background-color: rgb(101, 101, 101);
     color: white;
@@ -186,4 +182,13 @@
 
 #team2-dropdown {
     grid-area: team2;
+}
+
+.dropdown-content {
+    max-height: 200px;
+    overflow: auto;
+}
+
+#scoreline {
+    width: 80px;
 }

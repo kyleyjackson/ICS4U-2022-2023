@@ -118,7 +118,14 @@ const loginMenu = document.getElementById('login-menu');
 const input = document.getElementById('password');
 const admin = document.getElementById('admin');
 
+//Game Creator
+
+
 //Functions
+function createGame() {
+
+}
+
 function checkIfLoggedIn() {
     loggedIn = sessionStorage.getItem('loggedIn');
     if(loggedIn === true) {

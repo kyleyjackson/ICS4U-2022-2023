@@ -35,7 +35,7 @@
         </div>
     </nav>
     <div class="columns is-centered mt-5">
-        <div class="column is-11">
+        <div class="column is-8">
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title is-size-4">Add a Game</p>
@@ -45,31 +45,85 @@
                         <div class="grid-container">
                             <div class="team1-dropdown">
                                 <p class="title is-size-5">Team One</p>
-                                <div class="dropdown">
+                                <div class="dropdown is-hoverable">
                                     <div class="dropdown-trigger">
-                                        <button class="button">
-                                            <span id="team1-drop">Choose a Team</span>
+                                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                            <span>Choose a Team</span>
                                         </button>
                                     </div>
-                                    <div class="dropdown-menu">
-        
+                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                        <div class="dropdown-content">
+                                            <a class="dropdown-item ATL">Atlanta Hustle</a>
+                                            <a class="dropdown-item AUS">Austin Sol</a>
+                                            <a class="dropdown-item BOS">Boston Glory</a>
+                                            <a class="dropdown-item CAR">Carolina Flyers</a>
+                                            <a class="dropdown-item CHI">Chicago Union</a>
+                                            <a class="dropdown-item COL">Colorado Summit</a>
+                                            <a class="dropdown-item DAL">Dallas Legion</a>
+                                            <a class="dropdown-item DC">DC Breeze</a>
+                                            <a class="dropdown-item DET">Detroit Mechanix</a>
+                                            <a class="dropdown-item IND">Indianapolis AlleyCats</a>
+                                            <a class="dropdown-item LA">Los Angeles Aviators</a>
+                                            <a class="dropdown-item MAD">Madison Radicals</a>
+                                            <a class="dropdown-item MIN">Minnesota Wind Chill</a>
+                                            <a class="dropdown-item MON">Montreal Royal</a>
+                                            <a class="dropdown-item NY">New York Empire</a>
+                                            <a class="dropdown-item OAK">Oakland Spiders</a>
+                                            <a class="dropdown-item OTT">Ottawa Outlaws</a>
+                                            <a class="dropdown-item PHI">Philadelphia Phoenix</a>
+                                            <a class="dropdown-item PIT">Pittsburgh Thunderbirds</a>
+                                            <a class="dropdown-item POR">Portland Nitro</a>
+                                            <a class="dropdown-item SLC">Salt Lake Shred</a>
+                                            <a class="dropdown-item SAN">San Diego Growlers</a>
+                                            <a class="dropdown-item SEA">Seattle Cascades</a>
+                                            <a class="dropdown-item TAM">Tampa Bay Cannons</a>
+                                            <a class="dropdown-item TOR">Toronto Rush</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="team2-dropdown">
                                 <p class="title is-size-5">Team Two</p>
-                                <div class="dropdown">
+                                <div class="dropdown is-hoverable">
                                     <div class="dropdown-trigger">
-                                        <button class="button">
-                                            <span id="team2-drop">Choose a Team</span>
+                                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                            <span>Choose a Team</span>
                                         </button>
                                     </div>
-                                    <div class="dropdown-menu">
-                                        
+                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                        <div class="dropdown-content">
+                                            <a class="dropdown-item ATL">Atlanta Hustle</a>
+                                            <a class="dropdown-item AUS">Austin Sol</a>
+                                            <a class="dropdown-item BOS">Boston Glory</a>
+                                            <a class="dropdown-item CAR">Carolina Flyers</a>
+                                            <a class="dropdown-item CHI">Chicago Union</a>
+                                            <a class="dropdown-item COL">Colorado Summit</a>
+                                            <a class="dropdown-item DAL">Dallas Legion</a>
+                                            <a class="dropdown-item DC">DC Breeze</a>
+                                            <a class="dropdown-item DET">Detroit Mechanix</a>
+                                            <a class="dropdown-item IND">Indianapolis AlleyCats</a>
+                                            <a class="dropdown-item LA">Los Angeles Aviators</a>
+                                            <a class="dropdown-item MAD">Madison Radicals</a>
+                                            <a class="dropdown-item MIN">Minnesota Wind Chill</a>
+                                            <a class="dropdown-item MON">Montreal Royal</a>
+                                            <a class="dropdown-item NY">New York Empire</a>
+                                            <a class="dropdown-item OAK">Oakland Spiders</a>
+                                            <a class="dropdown-item OTT">Ottawa Outlaws</a>
+                                            <a class="dropdown-item PHI">Philadelphia Phoenix</a>
+                                            <a class="dropdown-item PIT">Pittsburgh Thunderbirds</a>
+                                            <a class="dropdown-item POR">Portland Nitro</a>
+                                            <a class="dropdown-item SLC">Salt Lake Shred</a>
+                                            <a class="dropdown-item SAN">San Diego Growlers</a>
+                                            <a class="dropdown-item SEA">Seattle Cascades</a>
+                                            <a class="dropdown-item TAM">Tampa Bay Cannons</a>
+                                            <a class="dropdown-item TOR">Toronto Rush</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <p class="title is-size-5 mt-6">Scoreline</p>
+                        <input class="input" type="number" id="scoreline" placeholder="00-00">
                     </div>
                 </div>
             </div>
