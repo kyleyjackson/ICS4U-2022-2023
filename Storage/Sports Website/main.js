@@ -122,8 +122,20 @@ const admin = document.getElementById('admin');
 const firstDropdownTxt = document.getElementById('drop1-text');
 const secondDropdownTxt = document.getElementById('drop2-text');
 const scoreInput = document.getElementById('scoreline-input');
+const AMPMInput = document.getElementById('am-pm-text');
+const dateInput = document.getElementById('date-input');
+const timeInput = document.getElementById('time-input');
+const amDropdown = document.getElementById('am-pm-dropdown');
 
 //Functions
+function setAMPM(time) {
+    if(time === 'AM') {
+        AMPMInput.textContent = 'AM';
+    }else {
+        AMPMInput.textContent = 'PM';
+    }
+}
+
 function createNewCard() {
 
 }
@@ -133,30 +145,42 @@ function createGame() {
     let scoreline;
     let dt;
 
-    if(validateTeam() === 1) { //validate teams
-        teams = firstDropdownTxt.textContent + '-' + secondDropdownTxt.textContent;
+    if(validateTeam(firstDropdownTxt.textContent, secondDropdownTxt.textContent) === 1) { //validate teams
+        teams = firstDropdownTxt.textContent + ' vs ' + secondDropdownTxt.textContent;
     }else {
-        
+        alert('Invalid Teams Input');
+        return; //* Return nothing in order to stop multiple alerts (annoying stuff)
     }
-    
-    if() { //validate scoreline
-
+    console.log(scoreInput.value);
+    if(validateScore(String(scoreInput.value)) === 1) { //validate scoreline
+        scoreline = scoreInput.value;
     }else {
-
+        alert('Invalid Scoreline Input');
+        return;
     }
 
-    if() { //validate date + time
-
+    if(validateDateTime(dateInput.value, timeInput.value) === 1) { //validate date + time
+        dt = dateInput.value + ' ' + timeInput.value + amDropdown.textContent;
     }else {
-
+        alert('Invalid Date/Time Input');
+        return;
     }
+
+    return teams + '~' + scoreline + '~' + dt;
 }
 
-function validateDateTime(inpit) {
-    if(input.match)
+function validateDateTime(input1, input2) {
+    if(input1.match("^\d\/\d{2}$") === true) {
+        if(input2.match("^\d\:\d{2}") === true) {
+            return 1;
+        }
+    }
+
+    return -1;
 }
 
 function validateScore(input) {
+    console.log(input);
     if(input.match("^\d{2}\-\d{2}$") === true) { //Pattern match: "^" match the front, \d an integer from 0-9, {2} match the previous parameter twice, \- match - literally, $ match the end
         return 1;
     }else if(input.match("^\d\-\d{2}$") === true) {
@@ -166,12 +190,18 @@ function validateScore(input) {
     }else if(input.match("^\d\-\d$") === true) {
         return 1;
     }
-
+    
     return -1;
 }
 
-function validateTeam(input) {
+function validateTeam(input1, input2) {
+    if(input1 === input2) {
+        return -1;
+    }else if(input1.match('^[A-Z]{3}$')) {
+        return 1;
+    }
 
+    return -1;
 }
 
 function assignTeam(team, button) {
@@ -715,3 +745,4 @@ function sortSouth(field) {
 
     buildTeamTable(southDiv, southBody);
 }
+

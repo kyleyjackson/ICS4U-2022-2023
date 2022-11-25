@@ -123,7 +123,27 @@
                             </div>
                         </div>
                         <p class="title is-size-5 mt-6">Scoreline</p>
-                        <input class="input" type="number" id="scoreline-input" placeholder="00-00">
+                        <input class="input" type="text" id="scoreline-input" placeholder="00-00">
+                        <p class="title is-size-5 mt-6">Date</p>
+                        <input type="text" class="input" id="date-input" placeholder="M/DD">
+                        <p class="title is-size-5 mt-6">Time</p>
+                        <input type="text" class="input" id="time-input" placeholder="0:00">
+                        <div class="dropdown is-hoverable" id="am-pm-dropdown">
+                            <div class="dropdown-trigger">
+                                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span id="am-pm-text">AM</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" onclick="setAMPM('AM');">AM</a>
+                                    <a class="dropdown-item" onclick="setAMPM('PM');">PM</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="submit-button-container" class="mt-6">
+                            <button class="button is-dark" id="submit-button" onclick="createGame();">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>

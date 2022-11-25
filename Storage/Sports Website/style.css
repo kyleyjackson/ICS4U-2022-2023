@@ -189,6 +189,19 @@
     overflow: auto;
 }
 
-#scoreline {
+#scoreline-input {
     width: 80px;
+}
+
+#date-input {
+    width: 80px;
+}
+
+#time-input {
+    width: 80px;
+}
+
+#submit-button-container {
+    display: flex;
+    justify-content: flex-end;
 }
