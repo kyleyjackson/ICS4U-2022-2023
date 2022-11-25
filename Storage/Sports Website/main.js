@@ -1,10 +1,12 @@
-//Arrays of each division
+//Arrays
+
+//Divisions
 const teamsEast = '[{"Name":"New York Empire", "Wins":15, "Losses":0, "PlusMinus":155}, {"Name":"DC Breeze", "Wins":11, "Losses":3, "PlusMinus":55}, {"Name":"Philadelphia Pheonix", "Wins":6, "Losses":7, "PlusMinus":5}, {"Name":"Boston Glory", "Wins":4, "Losses":8, "PlusMinus":-16}, {"Name":"Montreal Royal", "Wins":4, "Losses":8, "PlusMinus":-41}, {"Name":"Toronto Rush", "Wins":4, "Losses":8, "PlusMinus":-58}, {"Name":"Ottawa Outlaws", "Wins":2, "Losses":10, "PlusMinus":-42}]';
 const teamsCentral = '[{"Name":"Chicago Union", "Wins":13, "Losses":2, "PlusMinus":65}, {"Name":"Minnesota Wind Chill", "Wins":10, "Losses":4, "PlusMinus":69}, {"Name":"Indianapolis AlleyCats", "Wins":6, "Losses":7, "PlusMinus":5}, {"Name":"Madison Radicals", "Wins":6, "Losses":6, "PlusMinus":-2}, {"Name":"Pittsburgh Thunderbirds", "Wins":4, "Losses":8, "PlusMinus":-24}, {"Name":"Detroit Mechanix", "Wins":0, "Losses":12, "PlusMinus":-111}]';
 const teamsWest = '[{"Name":"Carolina Flyers", "Wins":12, "Losses":2, "PlusMinus":56}, {"Name":"Austin Sol", "Wins":9, "Losses":4, "PlusMinus":40}, {"Name":"Atlanta Hustle", "Wins":8, "Losses":4, "PlusMinus":36}, {"Name":"Dallas Legion", "Wins":1, "Losses":11, "PlusMinus":-56}, {"Name":"Tampa Bay Cannons", "Wins":1, "Losses":11, "PlusMinus":-88}]';
 const teamsSouth = '[{"Name":"Colorado Summit", "Wins":12, "Losses":2, "PlusMinus":63}, {"Name":"SLCt Lake Shred", "Wins":11, "Losses":3, "PlusMinus":59}, {"Name":"San Diego Growlers", "Wins":9, "Losses":4, "PlusMinus":14}, {"Name":"Oakland Spiders", "Wins":4, "Losses":8, "PlusMinus":-11}, {"Name":"LA Aviators", "Wins":4, "Losses":8, "PlusMinus":-36}, {"Name":"Seattle Cascades", "Wins":2, "Losses":10, "PlusMinus":-24}, {"Name":"Portland Nitro", "Wins":2, "Losses":10, "PlusMinus":-70}]';
 
-//Arrays of each game
+//Games per week
 const week1 = '[{"Teams":"ATL vs CAR", "Scoreline":"14-16", "DT":"4/29 7:00PM EDT"}, {"Teams":"SLC vs SAN", "Scoreline":"24-22", "DT":"4/29 7:00PM PDT"}, {"Teams":"NY vs DC", "Scoreline":"22-19", "DT":"4/30 7:00PM PDT"}, {"Teams":"PIT vs DET", "Scoreline":"17-13", "DT":"4/30 7:00PM EDT"}, {"Teams":"PHI vs BOS", "Scoreline":"24-25", "DT":"4/30 7:00PM EDT"}, {"Teams":"MON vs TOR", "Scoreline":"26-19" , "DT":"4/30 7:00PM EDT"}, {"Teams":"TAM vs ATL", "Scoreline":"12-24", "DT":"4/30 7:30PM EDT"}, {"Teams":"AUS vs DAL", "Scoreline":"20-17", "DT":"4/30 7:00PM CDT"}, {"Teams":"SLC vs LA", "Scoreline":"25-22", "DT":"4/30 6:00PM PDT"}, {"Teams":"PIT vs CHI", "Scoreline":"8-19", "DT":"5/1 2:00PM CDT"}, {"Teams":"SEA vs POR", "Scoreline":"24-29", "DT":"5/1 4:00PM PDT"}]';
 const week2 = '[{"Teams":"BOS vs OTT", "Scoreline":"19-21", "DT":"5/6 7:00PM EDT"}, {"Teams":"BOS vs MON", "Scoreline":"17-21", "DT":"5/7 1:00PM EDT"}, {"Teams":"CAR vs TAM", "Scoreline":"19-13", "DT":"5/7 6:00PM EDT"}, {"Teams":"PHI vs NY", "Scoreline":"15-17", "DT":"5/7 7:00PM EDT"}, {"Teams":"CHI vs MIN", "Scoreline":"24-21", "DT":"5/7 6:00PM CDT"}, {"Teams":"PIT vs MAD", "Scoreline":"16-18", "DT":"5/7 6:00PM CDT"}, {"Teams":"DET vs IND", "Scoreline":"22-33", "DT":"5/7 7:30PM EDT"}, {"Teams":"COL vs SEA", "Scoreline":"19-16", "DT":"5/7 5:00PM PDT"}, {"Teams":"SAN vs OAK", "Scoreline":"18-16", "DT":"5/7 6:00PM PDT"}, {"Teams":"COR vs POR", "Scoreline":"24-23", "DT":"5/8 4:00PM PDT"}]';
 const week3 = '[{"Teams":"MON vs PHI", "Scoreline":"18-17", "DT":"5/13 7:00PM EDT"}, {"Teams":"DAL vs AUS", "Scoreline":"17-24", "DT":"5/13 7:00PM CDT"}, {"Teams":"SEA vs SLC", "Scoreline":"21-23", "DT":"5/13 7:00PM MDT"}, {"Teams":"LA vs SAN", "Scoreline":"17-22", "DT":"5/14 1:00PM PDT"}, {"Teams":"TAM vs CAR", "Scoreline":"18-24", "DT":"5/14 6:00PM EDT"}, {"Teams":"MON vs DC", "Scoreline":"17-27", "DT":"5/14 7:00PM EDT"}, {"Teams":"NY vs BOS", "Scoreline":"23-19", "DT":"5/14 7:00PM EDT"}, {"Teams":"OTT vs TOR", "Scoreline":"26-29", "DT":"5/14 7:00PM EDT"}, {"Teams":"MAD vs IND", "Scoreline":"23-22", "DT":"5/14 7:30PM EDT"}, {"Teams":"MIN vs DAL", "Scoreline":"20-14", "DT":"5/14 7:00PM CDT"}]';
@@ -49,6 +51,8 @@ let week14Parsed = JSON.parse(week14);
 let playoffsParsed = JSON.parse(playoffs);
 let champsParsed = JSON.parse(championships);
 let allstarsParsed = JSON.parse(allstars);
+
+console.log(week1Parsed);
 
 //Table Bodies
 
@@ -128,6 +132,127 @@ const timeInput = document.getElementById('time-input');
 const amDropdown = document.getElementById('am-pm-dropdown');
 
 //Functions
+function sortDates(dt) {
+    week1Parsed.forEach((game) => {
+        if(game.DT.substring(0, game.DT.length - 10) === dt) {
+            console.log(week1Parsed.indexOf(game));
+            return week1Parsed.indexOf(game);
+        }
+    });
+
+    week2Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week2Parsed.indexOf(game));
+            return week2Parsed.indexOf(game);
+        }
+    });
+
+    week3Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week3Parsed.indexOf(game));
+            return week3Parsed.indexOf(game);
+        }
+    });
+
+    week4Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week4Parsed.indexOf(game));
+            return week4Parsed.indexOf(game);
+        }
+    });
+
+    week5Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week5Parsed.indexOf(game));
+            return week5Parsed.indexOf(game);
+        }
+    });
+
+    week6Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week6Parsed.indexOf(game));
+            return week6Parsed.indexOf(game);
+        }
+    });
+
+    week7Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week7Parsed.indexOf(game));
+            return week7Parsed.indexOf(game);
+        }
+    });
+
+    week8Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week8Parsed.indexOf(game));
+            return week8Parsed.indexOf(game);
+        }
+    });
+
+    week9Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week9Parsed.indexOf(game));
+            return week9Parsed.indexOf(game);
+        }
+    });
+
+    week10Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week10Parsed.indexOf(game));
+            return week10Parsed.indexOf(game);
+        }
+    });
+
+    week11Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week11Parsed.indexOf(game));
+            return week11Parsed.indexOf(game);
+        }
+    });
+
+    week12Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week12Parsed.indexOf(game));
+            return week12Parsed.indexOf(game);
+        }
+    });
+
+    week13Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week13Parsed.indexOf(game));
+            return week13Parsed.indexOf(game);
+        }
+    });
+
+    week14Parsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(week14Parsed.indexOf(game));
+            return week14Parsed.indexOf(game);
+        }
+    });
+
+    playoffsParsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(playoffsParsed.indexOf(game));
+            return playoffsParsed.indexOf(game);
+        }
+    });
+
+    champsParsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(champsParsed.indexOf(game));
+            return champsParsed.indexOf(game);
+        }
+    });
+
+    allstarsParsed.forEach((game) => {
+        if(game.DT === dt) {
+            console.log(allstarsParsed.indexOf(game));
+            return allstarsParsed.indexOf(game);
+        }
+    });
+}
+
 function setAMPM(time) {
     if(time === 'AM') {
         AMPMInput.textContent = 'AM';
@@ -136,8 +261,9 @@ function setAMPM(time) {
     }
 }
 
-function createNewCard() {
-
+function addNewGame(teams, scoreline, dt) {
+    sortDates(dt);
+    let index = sortDates(dt);
 }
 
 function createGame() {
@@ -151,8 +277,8 @@ function createGame() {
         alert('Invalid Teams Input');
         return; //* Return nothing in order to stop multiple alerts (annoying stuff)
     }
-    console.log(scoreInput.value);
-    if(validateScore(String(scoreInput.value)) === 1) { //validate scoreline
+
+    if(validateScore(scoreInput.value) === 1) { //validate scoreline
         scoreline = scoreInput.value;
     }else {
         alert('Invalid Scoreline Input');
@@ -166,12 +292,13 @@ function createGame() {
         return;
     }
 
-    return teams + '~' + scoreline + '~' + dt;
+    addNewGame(teams, scoreline, dt);
 }
 
 function validateDateTime(input1, input2) {
-    if(input1.match("^\d\/\d{2}$") === true) {
-        if(input2.match("^\d\:\d{2}") === true) {
+    if(input1.match(/^\d\/\d{2}$/gm)) {
+        if(input2.match(/^\d\:\d{2}/gm)) {
+            console.log(1);
             return 1;
         }
     }
@@ -180,24 +307,23 @@ function validateDateTime(input1, input2) {
 }
 
 function validateScore(input) {
-    console.log(input);
-    if(input.match("^\d{2}\-\d{2}$") === true) { //Pattern match: "^" match the front, \d an integer from 0-9, {2} match the previous parameter twice, \- match - literally, $ match the end
+    if(input.match(/^\d{2}\-\d{2}/gm)) { //Pattern match: "^" match the front, \d an integer from 0-9, {2} match the previous parameter twice, \- match - literally, $ match the end
         return 1;
-    }else if(input.match("^\d\-\d{2}$") === true) {
+    }else if(input.match(/^\d\-\d{2}$/gm)) {
         return 1;
-    }else if(input.match("^\d{2}\-\d$") === true) {
+    }else if(input.match(/^\d{2}\-\d$/gm)) {
         return 1;
-    }else if(input.match("^\d\-\d$") === true) {
+    }else if(input.match(/^\d\-\d$/gm)) {
         return 1;
     }
-    
+
     return -1;
 }
 
 function validateTeam(input1, input2) {
     if(input1 === input2) {
         return -1;
-    }else if(input1.match('^[A-Z]{3}$')) {
+    }else if(input1.match(/^[A-Z]{3}$/gm)) {
         return 1;
     }
 
