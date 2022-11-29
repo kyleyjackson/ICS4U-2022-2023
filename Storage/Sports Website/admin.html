@@ -19,6 +19,7 @@
             <div class="navbar-start">
                 <a class="navbar-item" href="standings.html">Standings</a>
                 <a class="navbar-item" href="schedule.html">Schedule</a>
+                <a class="navbar-item" href="team-matches.html">Team Matches</a>
                 <a class="navbar-item current-page" href="admin.html" id="admin">Admin</a>
             </div>
             <div class="navbar-end">
@@ -34,7 +35,7 @@
             </div>
         </div>
     </nav>
-    <div class="columns is-centered mt-5">
+    <div class="columns is-centered mt-5" id="column-full">
         <div class="column is-8">
             <div class="card">
                 <header class="card-header">
@@ -138,6 +139,21 @@
                                 <div class="dropdown-content">
                                     <a class="dropdown-item" onclick="setAMPM('AM');">AM</a>
                                     <a class="dropdown-item" onclick="setAMPM('PM');">PM</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown is-hoverable" id="timezone-dropdown">
+                            <div class="dropdown-trigger">
+                                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span id="timezone-text">EDT</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" onclick="setTimezone('EDT');">EDT</a>
+                                    <a class="dropdown-item" onclick="setTimezone('PDT');">PDT</a>
+                                    <a class="dropdown-item" onclick="setTimezone('CDT');">CDT</a>
+                                    <a class="dropdown-item" onclick="setTimezone('MDT');">MDT</a>
                                 </div>
                             </div>
                         </div>

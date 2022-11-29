@@ -205,3 +205,25 @@
     display: flex;
     justify-content: flex-end;
 }
+
+#column-full {
+    width: 100%;
+    background-color: hsl(0, 0%, 96%);
+}
+
+/* Custom Backgrounds */
+.green-bg {
+    background-color: darkgreen;
+}
+
+.blue-bg {
+    background-color: steelblue;
+}
+
+.yellow-bg {
+    background-color: peru;
+}
+
+.red-bg {
+    background-color: maroon;
+}
