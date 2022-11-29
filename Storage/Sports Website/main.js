@@ -1,10 +1,11 @@
 //Arrays
 
 //Divisions
-const teamsEast = '[{"Name":"New York Empire", "Wins":15, "Losses":0, "PlusMinus":155}, {"Name":"DC Breeze", "Wins":11, "Losses":3, "PlusMinus":55}, {"Name":"Philadelphia Pheonix", "Wins":6, "Losses":7, "PlusMinus":5}, {"Name":"Boston Glory", "Wins":4, "Losses":8, "PlusMinus":-16}, {"Name":"Montreal Royal", "Wins":4, "Losses":8, "PlusMinus":-41}, {"Name":"Toronto Rush", "Wins":4, "Losses":8, "PlusMinus":-58}, {"Name":"Ottawa Outlaws", "Wins":2, "Losses":10, "PlusMinus":-42}]';
-const teamsCentral = '[{"Name":"Chicago Union", "Wins":13, "Losses":2, "PlusMinus":65}, {"Name":"Minnesota Wind Chill", "Wins":10, "Losses":4, "PlusMinus":69}, {"Name":"Indianapolis AlleyCats", "Wins":6, "Losses":7, "PlusMinus":5}, {"Name":"Madison Radicals", "Wins":6, "Losses":6, "PlusMinus":-2}, {"Name":"Pittsburgh Thunderbirds", "Wins":4, "Losses":8, "PlusMinus":-24}, {"Name":"Detroit Mechanix", "Wins":0, "Losses":12, "PlusMinus":-111}]';
-const teamsWest = '[{"Name":"Carolina Flyers", "Wins":12, "Losses":2, "PlusMinus":56}, {"Name":"Austin Sol", "Wins":9, "Losses":4, "PlusMinus":40}, {"Name":"Atlanta Hustle", "Wins":8, "Losses":4, "PlusMinus":36}, {"Name":"Dallas Legion", "Wins":1, "Losses":11, "PlusMinus":-56}, {"Name":"Tampa Bay Cannons", "Wins":1, "Losses":11, "PlusMinus":-88}]';
-const teamsSouth = '[{"Name":"Colorado Summit", "Wins":12, "Losses":2, "PlusMinus":63}, {"Name":"Salt Lake Shred", "Wins":11, "Losses":3, "PlusMinus":59}, {"Name":"San Diego Growlers", "Wins":9, "Losses":4, "PlusMinus":14}, {"Name":"Oakland Spiders", "Wins":4, "Losses":8, "PlusMinus":-11}, {"Name":"LA Aviators", "Wins":4, "Losses":8, "PlusMinus":-36}, {"Name":"Seattle Cascades", "Wins":2, "Losses":10, "PlusMinus":-24}, {"Name":"Portland Nitro", "Wins":2, "Losses":10, "PlusMinus":-70}]';
+const teamsEast = '[{"Name":"New York Empire", "Wins":15, "Losses":0, "PlusMinus":155, "id":0}, {"Name":"DC Breeze", "Wins":11, "Losses":3, "PlusMinus":55, "id":1}, {"Name":"Philadelphia Pheonix", "Wins":6, "Losses":7, "PlusMinus":5, "id":2}, {"Name":"Boston Glory", "Wins":4, "Losses":8, "PlusMinus":-16, "id":3}, {"Name":"Montreal Royal", "Wins":4, "Losses":8, "PlusMinus":-41, "id":4}, {"Name":"Toronto Rush", "Wins":4, "Losses":8, "PlusMinus":-58, "id":5}, {"Name":"Ottawa Outlaws", "Wins":2, "Losses":10, "PlusMinus":-42, "id":6}]';
+const teamsCentral = '[{"Name":"Chicago Union", "Wins":13, "Losses":2, "PlusMinus":65, "id":7}, {"Name":"Minnesota Wind Chill", "Wins":10, "Losses":4, "PlusMinus":69, "id":8}, {"Name":"Indianapolis AlleyCats", "Wins":6, "Losses":7, "PlusMinus":5, "id":9}, {"Name":"Madison Radicals", "Wins":6, "Losses":6, "PlusMinus":-2, "id":10}, {"Name":"Pittsburgh Thunderbirds", "Wins":4, "Losses":8, "PlusMinus":-24, "id":11}, {"Name":"Detroit Mechanix", "Wins":0, "Losses":12, "PlusMinus":-111, "id":12}]';
+const teamsWest = '[{"Name":"Carolina Flyers", "Wins":12, "Losses":2, "PlusMinus":56, "id":13}, {"Name":"Austin Sol", "Wins":9, "Losses":4, "PlusMinus":40, "id":14}, {"Name":"Atlanta Hustle", "Wins":8, "Losses":4, "PlusMinus":36, "id":15}, {"Name":"Dallas Legion", "Wins":1, "Losses":11, "PlusMinus":-56, "id":16}, {"Name":"Tampa Bay Cannons", "Wins":1, "Losses":11, "PlusMinus":-88, "id":17}]';
+const teamsSouth = '[{"Name":"Colorado Summit", "Wins":12, "Losses":2, "PlusMinus":63, "id":18}, {"Name":"Salt Lake Shred", "Wins":11, "Losses":3, "PlusMinus":59, "id":19}, {"Name":"San Diego Growlers", "Wins":9, "Losses":4, "PlusMinus":14, "id":20}, {"Name":"Oakland Spiders", "Wins":4, "Losses":8, "PlusMinus":-11, "id":21}, {"Name":"LA Aviators", "Wins":4, "Losses":8, "PlusMinus":-36, "id":22}, {"Name":"Seattle Cascades", "Wins":2, "Losses":10, "PlusMinus":-24, "id":23}, {"Name":"Portland Nitro", "Wins":2, "Losses":10, "PlusMinus":-70, "id":24}]';
+const allTeams = '[{"Name":"New York Empire", "Wins":15, "Losses":0, "PlusMinus":155, "id":0}, {"Name":"DC Breeze", "Wins":11, "Losses":3, "PlusMinus":55, "id":1}, {"Name":"Philadelphia Pheonix", "Wins":6, "Losses":7, "PlusMinus":5, "id":2}, {"Name":"Boston Glory", "Wins":4, "Losses":8, "PlusMinus":-16, "id":3}, {"Name":"Montreal Royal", "Wins":4, "Losses":8, "PlusMinus":-41, "id":4}, {"Name":"Toronto Rush", "Wins":4, "Losses":8, "PlusMinus":-58, "id":5}, {"Name":"Ottawa Outlaws", "Wins":2, "Losses":10, "PlusMinus":-42, "id":6}, {"Name":"Chicago Union", "Wins":13, "Losses":2, "PlusMinus":65, "id":7}, {"Name":"Minnesota Wind Chill", "Wins":10, "Losses":4, "PlusMinus":69, "id":8}, {"Name":"Indianapolis AlleyCats", "Wins":6, "Losses":7, "PlusMinus":5, "id":9}, {"Name":"Madison Radicals", "Wins":6, "Losses":6, "PlusMinus":-2, "id":10}, {"Name":"Pittsburgh Thunderbirds", "Wins":4, "Losses":8, "PlusMinus":-24, "id":11}, {"Name":"Detroit Mechanix", "Wins":0, "Losses":12, "PlusMinus":-111, "id":12}, {"Name":"Carolina Flyers", "Wins":12, "Losses":2, "PlusMinus":56, "id":13}, {"Name":"Austin Sol", "Wins":9, "Losses":4, "PlusMinus":40, "id":14}, {"Name":"Atlanta Hustle", "Wins":8, "Losses":4, "PlusMinus":36, "id":15}, {"Name":"Dallas Legion", "Wins":1, "Losses":11, "PlusMinus":-56, "id":16}, {"Name":"Tampa Bay Cannons", "Wins":1, "Losses":11, "PlusMinus":-88, "id":17}, {"Name":"Colorado Summit", "Wins":12, "Losses":2, "PlusMinus":63, "id":18}, {"Name":"Salt Lake Shred", "Wins":11, "Losses":3, "PlusMinus":59, "id":19}, {"Name":"San Diego Growlers", "Wins":9, "Losses":4, "PlusMinus":14, "id":20}, {"Name":"Oakland Spiders", "Wins":4, "Losses":8, "PlusMinus":-11, "id":21}, {"Name":"LA Aviators", "Wins":4, "Losses":8, "PlusMinus":-36, "id":22}, {"Name":"Seattle Cascades", "Wins":2, "Losses":10, "PlusMinus":-24, "id":23}, {"Name":"Portland Nitro", "Wins":2, "Losses":10, "PlusMinus":-70, "id":24}]';
 
 //Games per week
 const week1 = '[{"Teams":"ATL vs CAR", "Scoreline":"14-16", "DT":"4/29 7:00PM EDT"}, {"Teams":"SLC vs SAN", "Scoreline":"24-22", "DT":"4/29 7:00PM PDT"}, {"Teams":"NY vs DC", "Scoreline":"22-19", "DT":"4/30 7:00PM PDT"}, {"Teams":"PIT vs DET", "Scoreline":"17-13", "DT":"4/30 7:00PM EDT"}, {"Teams":"PHI vs BOS", "Scoreline":"24-25", "DT":"4/30 7:00PM EDT"}, {"Teams":"MON vs TOR", "Scoreline":"26-19" , "DT":"4/30 7:00PM EDT"}, {"Teams":"TAM vs ATL", "Scoreline":"12-24", "DT":"4/30 7:30PM EDT"}, {"Teams":"AUS vs DAL", "Scoreline":"20-17", "DT":"4/30 7:00PM CDT"}, {"Teams":"SLC vs LA", "Scoreline":"25-22", "DT":"4/30 6:00PM PDT"}, {"Teams":"PIT vs CHI", "Scoreline":"8-19", "DT":"5/1 2:00PM CDT"}, {"Teams":"SEA vs POR", "Scoreline":"24-29", "DT":"5/1 4:00PM PDT"}]';
@@ -32,6 +33,7 @@ let eastDiv = JSON.parse(teamsEast);
 let centralDiv = JSON.parse(teamsCentral);
 let westDiv = JSON.parse(teamsWest);
 let southDiv = JSON.parse(teamsSouth);
+let allTeamsParsed = JSON.parse(allTeams);
 
 //Games
 let week1Parsed = JSON.parse(week1);
@@ -52,6 +54,7 @@ let playoffsParsed = JSON.parse(playoffs);
 let champsParsed = JSON.parse(championships);
 let allstarsParsed = JSON.parse(allstars);
 
+
 //Localstorage
 
 //Teams
@@ -59,6 +62,7 @@ let allstarsParsed = JSON.parse(allstars);
 localStorage.setItem('centralDiv', JSON.stringify(centralDiv));
 localStorage.setItem('westDiv', JSON.stringify(westDiv));
 localStorage.setItem('southDiv', JSON.stringify(southDiv));
+localStorage.setItem('allTeams', JSON.stringify(allTeamsParsed));
 
 //Games
 localStorage.setItem('week1', JSON.stringify(week1Parsed));
@@ -78,8 +82,6 @@ localStorage.setItem('week14', JSON.stringify(week14Parsed));
 localStorage.setItem('playoffs', JSON.stringify(playoffsParsed));
 localStorage.setItem('champs', JSON.stringify(champsParsed));
 localStorage.setItem('allstars', JSON.stringify(allstarsParsed)); */
-
-
 
 //Table Bodies
 
@@ -159,145 +161,39 @@ const timeInput = document.getElementById('time-input');
 const timezoneText = document.getElementById('timezone-text');
 
 //Team Matches Page
-const pageTitle = document.getElementById('team-matches-title');
+const pageTitle = document.getElementById('team-match-header');
 const titleBackground = document.getElementById('team-matches-bg');
 const tmBody = document.getElementById('tm-body');
-
-//Team Matches localStorage
-let currentTeam; 
-let currentArr; 
-//localStorage.setItem('currDiv', JSON.stringify(eastDiv));
-//localStorage.setItem('currTeam', 'New York Empire');
-
+const tmOne = document.getElementById('tm-half-one');
+const tmTwo = document.getElementById('tm-half-two');
 
 //Functions
+function createTeamGame() {
+    
+}
+
 function createTeamPage() {
-    pageTitle.textContent = '"' + currentTeam + '"';
+    let teamsArr = JSON.parse(localStorage.getItem('allTeams'));
+    let parameters = (new URL(document.location)).searchParams;
+
+    let filtered = teamsArr = teamsArr.filter(team => team.id == parameters.get('id'));
+    pageTitle.textContent = filtered[0].Name;
+
+    let bgID = filtered[0].id;
+
+    if(bgID < 7) {
+        titleBackground.setAttribute('class', 'green-bg');
+    }else if(bgID > 6 && bgID < 13) {
+        titleBackground.setAttribute('class', 'blue-bg');
+    }else if(bgID > 12 && bgID < 18) {
+        titleBackground.setAttribute('class', 'red-bg') 
+    }else {
+        titleBackground.setAttribute('class', 'yellow-bg');
+    }
 }
 
 function setTimezone(zone) {
     timezoneText.textContent = zone;
-}
-
-function sortDates(dt) {
-    week1Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week1Parsed.indexOf(game));
-            return week1Parsed.indexOf(game);
-        }
-    });
-
-    week2Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week2Parsed.indexOf(game));
-            return week2Parsed.indexOf(game);
-        }
-    });
-
-    week3Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week3Parsed.indexOf(game));
-            return week3Parsed.indexOf(game);
-        }
-    });
-
-    week4Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week4Parsed.indexOf(game));
-            return week4Parsed.indexOf(game);
-        }
-    });
-
-    week5Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week5Parsed.indexOf(game));
-            return week5Parsed.indexOf(game);
-        }
-    });
-
-    week6Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week6Parsed.indexOf(game));
-            return week6Parsed.indexOf(game);
-        }
-    });
-
-    week7Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week7Parsed.indexOf(game));
-            return week7Parsed.indexOf(game);
-        }
-    });
-
-    week8Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week8Parsed.indexOf(game));
-            return week8Parsed.indexOf(game);
-        }
-    });
-
-    week9Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week9Parsed.indexOf(game));
-            return week9Parsed.indexOf(game);
-        }
-    });
-
-    week10Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week10Parsed.indexOf(game));
-            return week10Parsed.indexOf(game);
-        }
-    });
-
-    week11Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week11Parsed.indexOf(game));
-            return week11Parsed.indexOf(game);
-        }
-    });
-
-    week12Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week12Parsed.indexOf(game));
-            return week12Parsed.indexOf(game);
-        }
-    });
-
-    week13Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week13Parsed.indexOf(game));
-            return week13Parsed.indexOf(game);
-        }
-    });
-
-    week14Parsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(week14Parsed.indexOf(game));
-            return week14Parsed.indexOf(game);
-        }
-    });
-
-    playoffsParsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(playoffsParsed.indexOf(game));
-            return playoffsParsed.indexOf(game);
-        }
-    });
-
-    champsParsed.forEach((game) => {    
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(champsParsed.indexOf(game));
-            return champsParsed.indexOf(game);
-        }
-    });
-
-    allstarsParsed.forEach((game) => {
-        if(game.DT.substring(0, game.DT.length - 11) === dt) {
-            console.log(allstarsParsed.indexOf(game));
-            return allstarsParsed.indexOf(game);
-        }
-    });
 }
 
 function setAMPM(time) {
@@ -426,11 +322,7 @@ function login() {
 function truncatePages(currPage) { //Displays a certain amount of buttons in order to maintain a cleaner look
     let active; 
 
-    if(!isNaN(currPage.substring(currPage.indexOf('k') + 1))) //use isNaN() to check if the specified value resembles a number
-        active = currPage.substring(currPage.indexOf('k') + 1);
-    else 
-        active = currPage;
-    return active;
+    
 }
 
 function findRequestedPage(int) {
@@ -640,17 +532,8 @@ function paginate(week, arr) {
     buildGameCard(arr);
 }
 
-function tmOnload() {
-    currentDiv = JSON.parse(localStorage.getItem('currDiv'));
-    currentTeam = localStorage.getItem('currTeam');
-    console.log('test');
-    console.log(currentTeam);
-    console.log(currentArr);
-
-    
+function tmOnload() { 
     createTeamPage();
-
-    
 }
 
 function adminOnload() {
@@ -766,27 +649,6 @@ function setAscending(exp) {
     //console.log(ascending);
 }
 
-function createFunction(teams, name) {
-    let div;
-    
-    if(teams === eastDiv) {
-        div = 'eastDiv';
-    }else if(teams === centralDiv) {
-        div = 'centralDiv';
-    }else if(teams === westDiv) {
-        div = 'westDiv';
-    }else {
-        div = 'southDiv';
-    }
-
-    return 'createTeamPage(' + div + ', "' + name + '");';
-}
-
-function createLocalStorage(teams, name) {
-    currentArr = localStorage.setItem('currDiv', JSON.stringify(teams));
-    currentTeam = localStorage.setItem('currTeam', '"' + name + '"');
-}
-
 function buildTeamTable(teams, table) {
     table.replaceChildren();
     teams.forEach((team) => {
@@ -795,8 +657,7 @@ function buildTeamTable(teams, table) {
         let anchor = document.createElement('a');
         anchor.textContent = team.Name;
         //anchor.setAttribute('onclick', createTeamFunction(teams, team.Name));
-        anchor.setAttribute('onclick', createLocalStorage(teams, team.Name));
-        anchor.setAttribute('href', 'team-matches.html');
+        anchor.setAttribute('href', 'team-matches.html?id=' + team.id);
         anchor.setAttribute('class', 'has-text-dark');
         cell.appendChild(anchor);
         row.appendChild(cell);
