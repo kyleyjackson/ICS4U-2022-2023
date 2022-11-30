@@ -122,6 +122,8 @@ let currentPage;
 let currentPageNum;
 let loggedIn = sessionStorage.getItem('isLoggedIn');
 const password = 'password';
+let isOneThird = true;
+let isTwoThirds = false;
 
 //Pagination elements
 const paginationLinks = document.querySelectorAll('.pagination-link');
@@ -145,6 +147,8 @@ const IDplayoffs = document.getElementById('playoffs');
 const IDchamps = document.getElementById('champs');
 const IDallstars = document.getElementById('allstars'); 
 
+const maxButtons = 9;
+
 //Login funcitonality
 const loginButton = document.getElementById('login');
 const loginMenu = document.getElementById('login-menu');    
@@ -164,19 +168,65 @@ const timezoneText = document.getElementById('timezone-text');
 const pageTitle = document.getElementById('team-match-header');
 const titleBackground = document.getElementById('team-matches-bg');
 const tmBody = document.getElementById('tm-body');
-const tmOne = document.getElementById('tm-half-one');
-const tmTwo = document.getElementById('tm-half-two');
+const tmOne = document.getElementById('tm-one-third');
+const tmTwo = document.getElementById('tm-two-thirds');
+const tmThree = document.getElementById('tm-three-thirds');
 
 //Functions
-function createTeamGame() {
-    
+function createTeamGame(games) {
+    let tmOne = document.getElementById('tm-one-third');
+    let tmTwo = document.getElementById('tm-two-thirds');
+    let tmThree = document.getElementById('tm-three-thirds');
+
+    tmOne.replaceChildren();
+    tmTwo.replaceChildren();
+    tmThree.replaceChildren();
+
+    games.forEach((game) => {
+        let team1 = game.Teams.substring(0, game.Teams.indexOf(' vs'));
+        let team2 = game.Teams.substring(game.Teams.indexOf('s') + 2);
+        let card = document.createElement('div');
+        let cardContent = document.createElement('div');
+        let content = document.createElement('div');
+        let para = document.createElement('p');
+
+        cardContent.classList.add('card-content');
+        content.classList.add('content');
+
+        para.textContent = game.Teams;
+        content.appendChild(para);
+        para.setAttribute('class', 'title is-size-3 teams');
+        para = document.createElement('p');
+        para.textContent = '(' + team1 + ') ' + game.Scoreline + ' (' + team2 + ')'; //Format should look like (team1) 00-00 (team2)
+        content.appendChild(para);
+        para.setAttribute('class', 'is-size-4 scoreline');
+        para = document.createElement('p');
+        para.textContent = game.DT;
+        content.appendChild(para);
+        para.setAttribute('class', 'is-size-5 game-dt');
+        cardContent.appendChild(content);
+        card.appendChild(cardContent);
+        card.setAttribute('class', 'card game-card mb-5 mx-6');
+
+        if(isOneThird && !isTwoThirds) {
+            tmOne.appendChild(card);
+            isOneThird = false;
+            isTwoThirds = true;
+        }else if(!isOneThird && isTwoThirds) {
+            tmTwo.appendChild(card);
+            isTwoThirds = false;
+        }else {
+            tmThree.appendChild(card);
+            isOneThird = true;
+        }
+    });
 }
 
 function createTeamPage() {
     let teamsArr = JSON.parse(localStorage.getItem('allTeams'));
     let parameters = (new URL(document.location)).searchParams;
 
-    let filtered = teamsArr = teamsArr.filter(team => team.id == parameters.get('id'));
+    let filtered = teamsArr.filter(team => team.id == parameters.get('id'));
     pageTitle.textContent = filtered[0].Name;
 
     let bgID = filtered[0].id;
@@ -190,6 +240,8 @@ function createTeamPage() {
     }else {
         titleBackground.setAttribute('class', 'yellow-bg');
     }
+
+    createTeamGame(findGames(abbreviateName(filtered[0].Name)))
 }
 
 function setTimezone(zone) {
@@ -207,7 +259,79 @@ function addNewGame(teams, scoreline, dt) {
 }
 
 function updateStats(team1, team2, scoreline) {
+    let eastDiv1 = false;
+    let centralDiv1 = false;
+    let westDiv1 = false;
+    let southDiv1 = false;
+    let eastDiv2 = false;
+    let centralDiv2 = false;
+    let westDiv2 = false;
+    let southDiv2 = false;
+    team1 = reverseAbbreviateName(team1);
+    team2 = reverseAbbreviateName(team2);
 
+    let pmFin = parseInt(scoreline.substring(0, scoreline.indexOf('-'))) - parseInt(scoreline.substring(scoreline.indexOf('-') + 1));
+    let index1;
+    let index2;
+
+    eastDiv.forEach((team) => {
+        if(team1 === team.Name) {
+            index1 = team.id;
+            eastDiv1 = true;
+        }
+    });
+
+    eastDiv.forEach((team) => {
+        if(team2 === team.Name) {
+            index2 = team.id;
+            eastDiv2 = true;
+        }
+    });
+
+    centralDiv.forEach((team) => {
+        if(team1 === team.Name) {
+            index1 = team.id;
+            centralDiv1 = true;
+        }
+    });
+
+    centralDiv.forEach((team) => {
+        if(team2 === team.Name) {
+            index2 = team.id;
+            centralDiv2 = true;
+        }
+    });
+
+    westDiv.forEach((team) => {
+        if(team1 === team.Name) {
+            index1 = team.id;
+            westDiv1 = true;
+        }
+    });
+
+    westDiv.forEach((team) => {
+        if(team2 === team.Name) {
+            index2 = team.id;
+            westDiv2 = true;
+        }
+    });
+
+    southDiv.forEach((team) => {
+        if(team1 === team.Name) {
+            index1 = team.id;
+            southDiv1 = true;
+        }
+    });
+
+    southDiv.forEach((team) => {
+        if(team2 === team.Name) {
+            index2 = team.id;
+            southDiv2 = true;
+        }
+    });
+
+    console.log(index1);
+    console.log(index2);
 }
 
 function createGame() {
@@ -241,9 +365,8 @@ function createGame() {
 }
 
 function validateDateTime(input1, input2) {
-    if(input1.match(/^\d{2}\/\d{2}$/gm) || input1.match(/^\d\/\d{2}$/gm) || input1.match(/^\d{2}\/\d$/gm) || input1.match(/^\d\/\d$/gm)) {
+    if(input1.match(/^\d\/\d{2}$/gm) || input1.match(/^\d{2}\/\d{2}$/gm) || input1.match(/^\d{2}\/\d$/gm) || input1.match(/^\d\/\d$/gm)) {
         if(input2.match(/^\d\:\d{2}$/gm) || input2.match(/^\d{2}\:\d{2}$/gm)) {
-            console.log(1);
             return 1;
         }
     }
@@ -269,6 +392,8 @@ function validateTeam(input1, input2) {
     if(input1 === input2) {
         return -1;
     }else if(input1.match(/^[A-Z]{3}$/gm)) {
+        return 1;
+    }else if(input1.match(/^[A-Z]{2}$/gm)) {
         return 1;
     }
 
@@ -298,7 +423,6 @@ function login() {
             input.addEventListener('keyup', (event) => { //Happens when the enter key is released (keyup)
                 if(event.keyCode === 13) { //13 is the keyCode for the 'Enter' key
                     if(input.value === 'Password') { //Checks the textarea to see if the it is the same as the correct password
-                        console.log('enter!');
                         loginButton.textContent = "Log out";
                         loginMenu.classList.add('login-hidden');
                         admin.classList.remove('admin-hidden');
@@ -319,10 +443,42 @@ function login() {
     input.value = ''; 
 }
 
-function truncatePages(currPage) { //Displays a certain amount of buttons in order to maintain a cleaner look
-    let active; 
-
-    
+function findPageName(int) {
+    if(int === 1) {
+        return 'week1';
+    }else if(int === 2) {
+        return 'week2';
+    }else if(int === 3) {
+        return 'week3';
+    }else if(int === 4) {
+        return 'week4';
+    }else if(int === 5) {
+        return 'week5';
+    }else if(int === 6) {
+        return 'week6';
+    }else if(int === 7) {
+        return 'week7';
+    }else if(int === 8) {
+        return 'week8';
+    }else if(int === 9) {
+        return 'week9';
+    }else if(int === 10) {
+        return 'week10';
+    }else if(int === 11) {
+        return 'week11';
+    }else if(int === 12) {
+        return 'week12';
+    }else if(int === 13) {
+        return 'week13';
+    }else if(int === 14) {
+        return 'week14';
+    }else if(int === 15) {
+        return 'playoffs';
+    }else if(int === 16) {
+        return 'champs';
+    }else if(int === 17) {
+        return 'allstars';
+    }
 }
 
 function findRequestedPage(int) {
@@ -352,7 +508,7 @@ function findRequestedPage(int) {
         return week12Parsed;
     }else if(int === 13) {
         return week13Parsed;
-    }else {
+    }else if(int === 14) {
         return week14Parsed;
     }
 }
@@ -449,7 +605,6 @@ function buildGameCard(games) {
         let content = document.createElement('div');
         let para = document.createElement('p');
 
-        card.classList.add('card');
         cardContent.classList.add('card-content');
         content.classList.add('content');
 
@@ -533,6 +688,24 @@ function paginate(week, arr) {
 }
 
 function tmOnload() { 
+    week1Parsed = JSON.parse(localStorage.getItem('week1'));
+    week2Parsed = JSON.parse(localStorage.getItem('week2'));
+    week3Parsed = JSON.parse(localStorage.getItem('week3'));
+    week4Parsed = JSON.parse(localStorage.getItem('week4'));
+    week5Parsed = JSON.parse(localStorage.getItem('week5'));
+    week6Parsed = JSON.parse(localStorage.getItem('week6'));
+    week7Parsed = JSON.parse(localStorage.getItem('week7'));
+    week8Parsed = JSON.parse(localStorage.getItem('week8'));
+    week9Parsed = JSON.parse(localStorage.getItem('week9'));
+    week10Parsed = JSON.parse(localStorage.getItem('week10'));
+    week11Parsed = JSON.parse(localStorage.getItem('week11'));
+    week12Parsed = JSON.parse(localStorage.getItem('week12'));
+    week13Parsed = JSON.parse(localStorage.getItem('week13'));
+    week14Parsed = JSON.parse(localStorage.getItem('week14'));
+    playoffsParsed = JSON.parse(localStorage.getItem('playoffs'));
+    champsParsed = JSON.parse(localStorage.getItem('champs'));
+    allstarsParsed = JSON.parse(localStorage.getItem('allstars'));
+
     createTeamPage();
 }
 
@@ -877,3 +1050,195 @@ function sortSouth(field) {
     buildTeamTable(southDiv, southBody);
 }
 
+function findGames(name) {
+    let arr = [];
+
+    week1Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+
+    week2Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week3Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week4Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week5Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week6Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week7Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week8Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week9Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week10Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week11Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week12Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week13Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    week14Parsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    playoffsParsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    champsParsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+    
+    allstarsParsed.forEach((game) => {
+        if(game.Teams.includes(name)) {
+            arr.push(game);
+        }
+    });
+
+    console.log(arr);
+    return arr;
+}
+
+function abbreviateName(name) {
+    if(name === 'New York Empire') {
+        return 'NY';
+    }else if(name === 'DC Breeze') {
+        return 'DC';
+    }else if(name == 'Salt Lake Shred') {
+        return 'SLC';
+    }else if(name === 'LA Aviators') {
+        return 'LA';
+    }else {
+        return name.substring(0, 3).toUpperCase();
+    }
+}
+
+function reverseAbbreviateName(str) {
+    if(str === 'ATL') {
+        return 'Atlanta Hustle';
+    }else if (str === 'AUS') {
+        return 'Austin Sol';
+    }else if (str === 'BOS') {
+        return 'Boston Glory';
+    }else if (str === 'CAR') {
+        return 'Carolina Flyers';
+    }else if (str === 'CHI') {
+        return 'Chicago Union';
+    }else if (str === 'COL') {
+        return 'Colorado Summit';
+    }else if (str === 'DAL') {
+        return 'Dallas Legion';
+    }else if (str === 'DC') {
+        return 'DC Breeze';
+    }else if (str === 'DET') {
+        return 'Detroit Mechanix';
+    }else if (str === 'IND') {
+        return 'Indianapolis AlleyCats';
+    }else if (str === 'LA') {
+        return 'LA Aviators';
+    }else if (str === 'MAD') {
+        return 'Madison Radicals';
+    }else if (str === 'MIN') {
+        return 'Minnesota Wind Chill';
+    }else if (str === 'MON') {
+        return 'Montreal Royal';
+    }else if (str === 'NY') {
+        return 'New York Empire';
+    }else if (str === 'OAK') {
+        return 'Oakland Spiders';
+    }else if (str === 'OTT') {
+        return 'Ottawa Outlaws';
+    }else if (str === 'PHI') {
+        return 'Philadelphia Phoenix';
+    }else if (str === 'PIT') {
+        return 'Pittsburgh Thunderbirds';
+    }else if (str === 'POR') {
+        return 'Portland Nitro';
+    }else if (str === 'SLC') {
+        return 'Salt Lake Shred';
+    }else if (str === 'SAN') {
+        return 'San Diego Growlers';
+    }else if (str === 'SEA') {
+        return 'Seattle Cascades';
+    }else if (str === 'TAM') {
+        return 'Tampa Bay Cannons';
+    }else if (str === 'TOR') {
+        return 'Toronto Rush';
+    }
+}
+
+function findDiv(str) {
+    if(str === 'NY' || str === 'BOS' || str === 'MON' || str === 'TOR' || str === 'DC' || str === 'DC' || str === 'OTT') {
+        console.log(localStorage.getItem('eastDiv'));
+        return localStorage.getItem('eastDiv');
+    }else if(str === 'CHI' || str === 'MIN' || str === 'IND' || str === 'MAD' || str === 'PIT' || str === 'DET') {
+        console.log(localStorage.getItem('centralDiv'));
+        return localStorage.getItem('cemtralDiv');
+    }else if(str === 'CAR' || str === 'AUS' || str === 'ATL' || str === 'DAL' || str === 'TAM') {
+        console.log(localStorage.getItem('westDiv'));
+        return localStorage.getItem('westDiv');
+    }else if(str === 'COL' || str === 'SLC' || str === 'SAN' || str === 'MAD' || str === 'OAK' || str === 'LA' || str === 'SEA' || str === 'POR') {
+        console.log(localStorage.getItem('southDiv'));
+        return localStorage.getItem('southDiv');
+    }
+}

@@ -9,31 +9,46 @@
     <title>AUDL | Team Matches</title>
 </head>
 <body id="tm-body" onload="tmOnload();">
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="standings.html">
-                <p class="is-size-3 px-4 has-text-weight-bold">AUDL STANDINGS</p>
-            </a>
-        </div>
-        <div id="navbar-main" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item current-page" href="standings.html">Standings</a>
-                <a class="navbar-item" href="schedule.html">Schedule</a>
-                <a class="navbar-item" href="admin.html" id="admin">Admin</a>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="standings.html">
+                    <p class="is-size-3 px-4 has-text-weight-bold">AUDL STANDINGS</p>
+                </a>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div id="login-container">
-                        <a class="button is-dark" id="login" onclick="login();">Log in</a>
-                        <div id="login-menu" class="has-background-dark login-hidden is-active">
-                            <p id="password-header" class="title">Enter Password</p>
-                            <input type="text" id="password">
+            <div id="navbar-main" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="standings.html">Standings</a>
+                    <a class="navbar-item" href="schedule.html">Schedule</a>
+                    <a class="navbar-item current-page" href="admin.html" id="admin">Admin</a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div id="login-container">
+                            <a class="button is-dark" id="login" onclick="login();">Log in</a>
+                            <div id="login-menu" class="has-background-dark login-hidden is-active">
+                                <p id="password-header" class="title">Enter Password</p>
+                                <input type="text" id="password">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </nav>
+
+        <div class="container" id="nav2">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="admin.html" id="admin">Admin</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
+    
     <div class="columns is-centered has-background-light">
         <div class="column is-11 mt-5">
             <section class="hero" id="team-matches-bg">
@@ -42,8 +57,11 @@
                 </div>
             </section>
             <div id="tm-body">
-                <div id="tm-half-one"></div>
-                <div id="tm-half-two"></div>
+                <div class="columns is-centered mt-3">
+                    <div class="column is-3" id="tm-one-third"></div>
+                    <div class="column is-3" id="tm-two-thirds"></div>
+                    <div class="column is-3" id="tm-three-thirds"></div>
+                </div>
             </div>
         </div>
     </div>

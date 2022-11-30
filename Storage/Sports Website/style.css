@@ -13,6 +13,10 @@
     display: none;
 }
 
+#nav2 {
+    display: none;
+}
+
 /* MAIN STANDINGS */
 #east-column .card-header {
     border-bottom: darkgreen 3px solid;
@@ -73,7 +77,7 @@
 }
 
 #filter-menu .card-content button {
-    width: 150px;
+    width: 100%;
 }
 
 #filter-menu .card-content button:hover {
@@ -91,6 +95,10 @@
     color: white;
 }
 
+#sort-pm2 {
+    display: none;
+}
+
 /* PAGINATION */
 .is-active-week {
     background-color: rgb(101, 101, 101);
@@ -103,7 +111,7 @@
 }
 
 .pagination-hidden {
-    display: none;
+    display: none !important; /* !imporant makes the specified clause override anything else */
 }
 
 /* GAME CARDS */
@@ -125,10 +133,12 @@
 
 #half-two {
     margin-left: 50px; /* 100px on 1920x1080 res */
+    background-color: hsl(0, 0%, 96%);;
 }
 
 #half-one {
     margin-left: 75px; /* 125px on 1920x1080 res */
+    background-color: hsl(0, 0%, 96%);;
 }
 
 /* Login area */
@@ -226,4 +236,233 @@
 
 .red-bg {
     background-color: maroon;
+}
+
+/* Media Queries */
+@media (width < 1380px) {
+    #sort-pm {
+        display: none;
+    }
+
+    #sort-pm2 {
+        display: inline-block;
+    }
+
+    #schedule-small-standings {
+        display: none;
+    }
+
+    #tm-body .card {
+        width: 100%;
+    }
+}
+
+@media (width < 1200px) {
+    #filter-menu {
+        display: none;
+    }
+
+    #small-standings {
+        display: none;
+    }
+
+    #standings-main {
+        width: 90%;
+    }
+
+    #game-adder-thingy {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (width < 1025px) {
+    #nav2 {
+        display: block;
+        z-index: 1;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* IMPORTED HAMBURGER MENU */
+    h2 {
+        vertical-align: center;
+        text-align: center;
+    }
+
+    body{
+        background-size: cover;
+    }
+    
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+    
+    a, a:hover {
+        color: white;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #000000;
+        background: linear-gradient(to left, darkgreen, steelblue, peru, maroon); /*Creates a gradient for the background*/
+        color: #FFF;
+        height: 50px;
+        padding: 1em;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .menu > li { /*Selects all li elements where the parent is the menu class*/
+        margin: 0 1rem;
+        overflow: hidden;
+    }
+    
+    .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column; /*Specifies how flex items are placed in the flex container*/
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #menu-toggle {
+        display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before, /*Insert something before the menu-button class*/
+    .menu-button::after { /*Insert something after the menu-button class*/
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /*Tranforms the menu button according to the specified values*/
+        border-radius: 2px;
+    }
+    
+    .menu-button::before {
+        content: '';
+        margin-top: -8px;
+    }
+    
+    .menu-button::after {
+        content: '';
+        margin-top: 8px;
+    }
+    /*'+' operator in this case selects the first menu-button container placed after #menu-toggle elements*/
+    #menu-toggle:checked + .menu-button-container .menu-button::before { /*:checked selects every checked #menu-toggle element*/ 
+        margin-top: 0px;
+        transform: rotate(45deg);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-45deg);
+    }
+    
+    #nav1{
+        display: none; /*Makes the static navbar disappear*/
+    }
+    
+    #nav2{
+        display: block; /*Displays the hamburger menu in place of the static navbar*/
+    }
+    
+    .menu-button-container {
+        display: flex;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #menu-toggle ~ .menu li { /*Selects every "menu li" class that is preceeded by #menu-toggle*/
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+    
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+}
+
+
+@media (width < 769px) {
+    #standings-main {
+        margin-left: 5%;
+    }
+
+    #game-adder-thingy {
+        margin-left: 8%; /* Added this bc of Bulma responsiveness */
+    }
+
+    #tm-one-third, #tm-two-thirds, #tm-three-thirds {
+        margin-left: 18%;
+    }
+
+    #half-one, #half-two {
+        margin-left: 25%;
+    }
+}
+
+@media (width < 440px) {
+    #small-standings {
+        display: block;
+        margin-left: 8%;
+    }
+
+    #standings-main {
+        display: none;
+    }
+
+    #half-one, #half-two {
+        margin-left: 3%;
+    }
 }

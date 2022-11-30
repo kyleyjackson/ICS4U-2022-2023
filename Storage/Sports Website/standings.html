@@ -9,33 +9,48 @@
     <title>Standings | AUDL</title>
 </head>
 <body class="has-background-light" onload="standingsOnload();">
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="standings.html">
-                <p class="is-size-3 px-4 has-text-weight-bold">AUDL STANDINGS</p>
-            </a>
-        </div>
-        <div id="navbar-main" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item current-page" href="standings.html">Standings</a>
-                <a class="navbar-item" href="schedule.html">Schedule</a>
-                <a class="navbar-item" href="admin.html" id="admin">Admin</a>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="standings.html">
+                    <p class="is-size-3 px-4 has-text-weight-bold">AUDL STANDINGS</p>
+                </a>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div id="login-container">
-                        <a class="button is-dark" id="login" onclick="login();">Log in</a>
-                        <div id="login-menu" class="has-background-dark login-hidden is-active">
-                            <p id="password-header" class="title">Enter Password</p>
-                            <input type="text" id="password">
+            <div id="navbar-main" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item current-page" href="standings.html">Standings</a>
+                    <a class="navbar-item" href="schedule.html">Schedule</a>
+                    <a class="navbar-item" href="admin.html" id="admin">Admin</a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div id="login-container">
+                            <a class="button is-dark" id="login" onclick="login();">Log in</a>
+                            <div id="login-menu" class="has-background-dark login-hidden is-active">
+                                <p id="password-header" class="title">Enter Password</p>
+                                <input type="text" id="password">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </nav>
+
+        <div class="container" id="nav2">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="admin.html" id="admin">Admin</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
+
     <div class="columns is-centered pt-6">
-        <div class="column is-3 pr-6 is-size-7">
+        <div class="column is-3 pr-6 is-size-7" id="small-standings">
             <div class="card">
                 <div class="card-content has-background-grey-lighter">
                     <div class="content">
@@ -91,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="column is-6">
+        <div class="column is-6" id="standings-main">
             <div class="card">
                 <div class="card-content">
                     <div class="content">
@@ -107,10 +122,10 @@
                                             <table id="east-standings" class="table is-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>Team</th>
-                                                        <th>Wins</th>
-                                                        <th>Losses</th>
-                                                        <th>+/-</th>
+                                                        <th onclick="sortName();">Team</th>
+                                                        <th onclick="sortWins();">Wins</th>
+                                                        <th onclick="sortLosses();">Losses</th>
+                                                        <th onclick="sortPlusMinus();">+/-</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -131,10 +146,10 @@
                                             <table id="central-standings" class="table is-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>Team</th>
-                                                        <th>Wins</th>
-                                                        <th>Losses</th>
-                                                        <th>+/-</th>
+                                                        <th onclick="sortName();">Team</th>
+                                                        <th onclick="sortWins();">Wins</th>
+                                                        <th onclick="sortLosses();">Losses</th>
+                                                        <th onclick="sortPlusMinus();">+/-</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -155,10 +170,10 @@
                                             <table id="west-standings" class="table is-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>Team</th>
-                                                        <th>Wins</th>
-                                                        <th>Losses</th>
-                                                        <th>+/-</th>
+                                                        <th onclick="sortName();">Team</th>
+                                                        <th onclick="sortWins();">Wins</th>
+                                                        <th onclick="sortLosses();">Losses</th>
+                                                        <th onclick="sortPlusMinus();">+/-</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -179,10 +194,10 @@
                                             <table id="south-standings" class="table is-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>Team</th>
-                                                        <th>Wins</th>
-                                                        <th>Losses</th>
-                                                        <th>+/-</th>
+                                                        <th onclick="sortName();">Team</th>
+                                                        <th onclick="sortWins();">Wins</th>
+                                                        <th onclick="sortLosses();">Losses</th>
+                                                        <th onclick="sortPlusMinus();">+/-</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -211,7 +226,7 @@
                         <div class="columns">
                             <div class="column">
                                 <button id="sort-wins" class="button" onclick="sortWins();">WINS</button>
-                            </div>
+                            </div>  
                         </div>
                         <div class="columns">
                             <div class="column">
@@ -221,6 +236,7 @@
                         <div class="columns">
                             <div class="column">
                                 <button id="sort-pm" class="button" onclick="sortPlusMinus();">PLUS/MINUS</button>
+                                <button id="sort-pm2" class="button" onclick="sortPlusMinus();">+/-</button>
                             </div>
                         </div>
                     </div>
