@@ -11,13 +11,15 @@ public class intArrayStack {
     }
 
     public Integer[] push(Integer data) {
-        Integer[] temp = new Integer[stack.length + 1];
+        Integer[] temp = new Integer[numItems + 1];
 
-        for (int i = 0; i < stack.length; i++)
+        for (int i = 0; i < numItems; i++)
             temp[i] = stack[i];
 
-        temp[stack.length] = data;
+        temp[numItems] = data;
         top = data;
+        stack = temp;
+        numItems++;
 
         return temp;
     }
@@ -36,5 +38,9 @@ public class intArrayStack {
 
     public boolean isEmpty() {
         return top < 0;
+    }
+
+    public int search(Integer data) {
+
     }
 }
