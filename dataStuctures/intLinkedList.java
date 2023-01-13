@@ -1,4 +1,4 @@
-package data;
+package dataStuctures;
 
 public class intLinkedList {
     private intNode head;
