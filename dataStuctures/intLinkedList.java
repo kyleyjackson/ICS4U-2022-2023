@@ -72,7 +72,7 @@ public class intLinkedList {
         return null;
     }
 
-    public Integer removeFront(Integer data) {
+    public Integer removeFront() {
         if (head == null)
             return null;
         else {
@@ -106,5 +106,20 @@ public class intLinkedList {
         result += "}";
 
         return result;
+    }
+
+    public Integer get(int index) {
+        if (head == null)
+            throw new IllegalStateException("Cannot get element from empty list");
+        else if (index < size())
+            throw new IndexOutOfBoundsException(index + " is an invalid index, max index is: " + (size() - 1));
+        else {
+            intNode current = head;
+
+            for (int i = 0; i < index; i++) {
+                current = current.getLink();
+            }
+            return current.getData();
+        }
     }
 }
