@@ -119,6 +119,7 @@ public class intLinkedList {
             for (int i = 0; i < index; i++) {
                 current = current.getLink();
             }
+
             return current.getData();
         }
     }

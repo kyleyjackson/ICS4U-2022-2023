@@ -77,4 +77,8 @@ public class intArrayStack {
         result += "}";
         return result;
     }
+
+    public Integer get(int index) {
+        return stack[index];
+    }
 }
