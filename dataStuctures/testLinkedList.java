@@ -2,7 +2,7 @@ package dataStuctures;
 
 public class testLinkedList {
     public static void main(String[] args) {
-        // testAddNode();
+        testAddNode();
         testRemoveNode();
     }
 
