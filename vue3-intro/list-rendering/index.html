@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8" />
    <title>Vue Mastery</title>
@@ -9,11 +8,10 @@
    <!-- Import Vue.js -->
    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 </head>
-
 <body>
    <div id="app">
       <div class="nav-bar"></div>
-
+      
       <div class="product-display">
          <div class="product-container">
             <div class="product-image">
@@ -23,7 +21,12 @@
                <h1>{{ product }}</h1>
                <p v-if="inStock">In Stock</p>
                <p v-else>Out of Stock</p>
-            </div>
+               <ul>
+                  <li v-for="detail in details">{{ detail }}</li>
+               </ul>
+               <ul>
+                  <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+               </ul>
          </div>
       </div>
    </div>
@@ -33,8 +36,7 @@
 
    <!-- Mount App -->
    <script>
-      const mountedApp = app.mount('#app')
+      const mountedApp = app.mount('#app');
    </script>
 </body>
-
 </html>
