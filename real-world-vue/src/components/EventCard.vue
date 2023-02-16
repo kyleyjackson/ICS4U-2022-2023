@@ -1,20 +1,39 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import EventService from '@/services/EventService.js'
  
-defineProps({
-  event: {
-    type: Object,
+const props = defineProps({
+  id: {
     required: true,
   },
 })
-</script>
  
+const event = ref(null)
+ 
+onMounted(() => {
+  EventService.getEvent(props.id)
+    .then((response) => {
+      event.value = response.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+})
+</script>
+
 <template>
-  <div class="event-card">
-    <h2>{{ event.title }}</h2>
-    <span>@{{ event.time }} on {{ event.date }}</span>
-  </div>
-</template>
+    <RouterLink
+      class="event-link"
+      :to="{ name: 'event-details', params: { id: event.id } }"
+    >
+      <div class="event-card">
+        <h2>{{ event.title }}</h2>
+        <span>@{{ event.time }} on {{ event.date }}</span>
+      </div>
+    </RouterLink>
+  </template>
+
+  
  
 <style scoped>
 .event-card {
@@ -27,5 +46,10 @@ defineProps({
 .event-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.event-link {
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>
