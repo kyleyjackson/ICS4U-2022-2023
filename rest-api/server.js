@@ -65,6 +65,44 @@ let courses = [
 
 app.get('/api/courses', (req, res) => {
     res.send(courses)
+    
+})
+
+app.get('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id))
+    if(!course) return res.status(404).send('Thou art unable to discover said educational material')
+    res.send(course)
+})
+
+app.post('/api/courses', (req, res) => {
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name,
+        age: req.body.age
+    }
+
+    courses.push(course)
+    res.send(course)
+})
+
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id))
+    if(!course) return res.status(404).send('Thou art unable to discover said educational material')
+
+    course.name = req.body.name
+    course.age = req.body.age
+
+    res.send(course)
+})
+
+app.delete('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id))
+    if(!course) return res.status(404).send('Thou art unable to discover said educational material')
+
+    const index = courses.indexOf(course)
+    courses.splice(index, 1)
+
+    res.send(course)
 })
 
 //~Start the server
